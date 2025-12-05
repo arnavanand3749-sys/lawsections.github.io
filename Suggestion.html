@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Law Sections — Search & Plain-English Explanations (India)</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Search Indian law sections (IPC, CrPC) with plain-English summaries, examples and sources. Educational only — not legal advice.">
+
+  <style>
+    :root{
+      --brand:#05264a; --accent:#c59a3b;
+    }
+    body{ font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; color:#111827; background:#ffffff; }
+    h1,h2,h3{ font-family: 'Merriweather', serif; color:var(--brand); }
+    .summary{ font-size:0.98rem; color:#1f2937; }
+    .statutory{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace; background:#f8f9fa; padding:10px; border-radius:6px; white-space:pre-wrap; }
+    .tag{ font-size:0.82rem; }
+    .sticky-search{ position: sticky; top:1rem; z-index: 102; }
+    .muted-small{ font-size:0.85rem; color:#6b7280; }
+    .navbar-backdrop{ backdrop-filter: blur(6px); background: rgba(255,255,255,0.90); border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1030; }
+    .accent{ color: var(--accent); }
+    .btn-accent{ background: var(--accent); color: #fff; border: none; }
+    .accordion-button:focus{ box-shadow: 0 0 0 .2rem rgba(197,154,59,0.25); }
+    footer{ background:#f8f9fa; padding:1.75rem 0; margin-top:2.5rem; }
+    @media (max-width:767px){
+      .sticky-search{ position: static; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar-backdrop navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div style="width:40px;height:40px;background:var(--brand);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-right:10px">L</div>
+        <div>
+          <div style="font-weight:600;color:var(--brand)" class="container-header">LawSections</div>
+          <small class="text-muted">Plain-English explanations • India</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Sections</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-accent btn-sm" href="Suggestion.html">Suggest a Section</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="mb-3">Suggest a Section</h1>
+          <p class="summary mb-4">Help us improve LawSections by suggesting new sections or corrections to existing ones. Your input makes this resource better for everyone.</p>
+          <form action="mailto:arnav.anand3749@gmail.com" method="POST">
+            <div class="mb-3 text-start">
+              <label for="sectionNumber" class="form-label">Section Number</label>
+              <input type="text" class="form-control" id="sectionNumber" name="sectionNumber" placeholder="e.g., 420 IPC" required>
+            </div>
+            <div class="mb-3 text-start">
+              <label for="suggestionDetails" class="form-label">Suggestion Details</label>
+              <textarea class="form-control" id="suggestionDetails" name="suggestionDetails" rows="5" placeholder="Provide details about the section or correction you are suggesting." required></textarea>
+            </div>
+            <div class="mb-3 text-start">
+              <label for="contactInfo" class="form-label">Your Contact Info (optional)</label>
+              <input type="email" class="form-control" id="contactInfo" name="contactInfo" placeholder="Your email address">
+              <div class="form-text">We'll only use this to follow up if needed.</div>
+            </div>
+            <button type="submit" class="btn btn-accent">Submit Suggestion</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+
+  <!-- CONTACT / FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <strong>LawSections</strong> — Educational resource • Last updated: <span id="lastUpdated">2025-11-16</span>
+          <div class="mt-2 muted-small">If you want more sections added or corrections, contact the site admin.</div>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="muted-small">© <span id="yr"></span> • Not legal advice</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

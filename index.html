@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Law Sections</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <head>
+    <link rel="icon" type="image/png" href="compliant.png">
+</head>
+
+
+
+  <style>
+    :root { --brand:#05264a; --accent:#c59a3b; }
+    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#111827; background:#ffffff; margin:0; }
+
+    h1,h2 { font-family: "Merriweather", serif; color:var(--brand); margin:0; }
+    .muted-small { color:#6b7280; font-size:.9rem; }
+    .statutory { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace; background:#f8f9fa; padding:10px; border-radius:6px; white-space:pre-wrap; }
+
+    .page-bg { background-color: #f8f9fa; width:100%; }
+
+    .content-container { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+
+    .controls { position: sticky; top:1rem; }
+    @media (max-width:767px) { .controls { position: static; } }
+
+    /* Checkbox filters */
+    .filter-checkbox { display:none; }
+
+    .filter-label {
+      display:inline-block;
+      margin:0 .25rem .5rem 0;
+      cursor:pointer;
+      padding:.375rem .6rem;
+      border-radius:.375rem;
+      border:1px solid rgba(0,0,0,0.08);
+      background:#fff;
+      color:#374151;
+      font-size:.85rem;
+    }
+    .filter-checkbox:checked + .filter-label {
+      background: var(--accent);
+      color:white;
+      border-color: rgba(0,0,0,0.06);
+      box-shadow: 0 2px 6px rgba(2,6,23,0.06);
+    }
+    .clearfilter{
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #05264a;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .clearfilter:hover{
+    background-color: #05264a;
+    color: white;
+    transform: scale(1.02);
+  }
+
+  
+    /* CSS-only filtering logic */
+    
+    /* new */
+    #f-criminal:checked ~ .results .item,
+    #f-murder:checked   ~ .results .item,
+    #f-fraud:checked    ~ .results .item,
+    #f-family:checked   ~ .results .item,
+    #f-rape:checked     ~ .results .item,
+    #f-attempt:checked  ~ .results .item {
+      display:none;
+    }
+
+    /* Re-show matching items (OR behaviour) */
+    #f-criminal:checked ~ .results .item[data-tags*="criminal"],
+    #f-murder:checked   ~ .results .item[data-tags*="murder"],
+    #f-fraud:checked    ~ .results .item[data-tags*="fraud"],
+    #f-family:checked   ~ .results .item[data-tags*="family"],
+    #f-rape:checked     ~ .results .item[data-tags*="rape"], 
+    #f-attempt:checked  ~ .results .item[data-tags*="attempt"]{
+      display:block;
+    }
+
+    .results .item:target { 
+      outline: 3px solid rgba(5,38,74,0.08); 
+      background: rgba(197,154,59,0.06); 
+    }
+
+    /* Cards */
+    details { border:1px solid rgba(0,0,0,0.06); border-radius:.375rem; margin-bottom:.8rem; background:#fff;transition: all 0.3s ease;}
+    summary { list-style:none; cursor:pointer; padding:.9rem 1rem; display:flex; justify-content:space-between; align-items:center; text-align:left; }
+    summary::-webkit-details-marker { display:none; }
+    details[open] summary { background: rgba(197,154,59,0.05); }
+    .detail-body { padding:1rem; border-top:1px solid rgba(0,0,0,0.04); }
+
+    /* Info link */
+    .info{
+      text-decoration: none;
+      color: #c59a3b;
+      font-weight: 600;
+      font-size: 16px;
+      border: 2px solid #05264a;
+      border-radius: 6px;
+      padding: 6px 10px;
+      transition: all 0.22s ease;
+      display:inline-block;
+      margin-top:10px;
+    }
+    .info:hover{
+      box-shadow: 0px 10px 20px rgba(55,65,81,0.12);
+      background-color: #05264a;
+      color:white;
+    }
+
+    .suggest{
+      background-color: var(--accent);
+      color:white;
+      padding:6px 12px;
+      border-radius:6px;
+      font-weight:600;
+      text-decoration:none;
+      transition: all 0.3s ease;
+    }
+
+    footer { padding-top:1rem; padding-bottom:1rem; }
+    .stat-link { 
+      font-size:0.9rem; 
+      margin-left:8px; 
+      text-decoration:none; 
+      color:var(--brand); 
+      font-weight:600; 
+      transition: all 0.3s ease;
+    }
+    .stat-link:hover{
+      border: 1px solid #05264a;
+      border-radius: 4px;
+      box-shadow: 0px 1px 2px;
+      background: linear-gradient(to right, #F6EEDB, #CFEAF7);
+      color: #05264a;
+    }
+    .jump{
+      text-decoration: none;
+      font-weight: 500;
+      border: 2px solid black;
+      border-radius: 8px;
+      padding: 3px;
+      transition: all 0.3s ease;
+      color: black;
+    }
+    .jump:hover{
+      box-shadow: 0px 10px 20px rgba(55,65,81,0.12);
+      transform: scale(1.02);
+      color: white;
+      background-color: #05264a;
+    }
+  details:hover{
+    transform: scale(1.02);
+    border: 1px solid #05264a;
+    border-radius: 4px;
+  }    
+  .suggest:hover{
+     background-color: var(--brand);
+     color: white;
+  }
+  .container-jump{
+    gap:6px ;
+  }
+  
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR (Logo Left, Items Right) -->
+  <nav class="navbar navbar-expand-lg" 
+       style="background: #ffffff; border-bottom:1px solid rgba(0,0,0,0.05);">
+    <div class="container">
+
+      <!-- LEFT: BRAND -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap:.6rem;">
+        <div style="width:40px;height:40px;background:var(--brand);color:white;
+                    border-radius:8px;display:flex;align-items:center;justify-content:center;
+                    font-weight:700;">
+          L
+        </div>
+        <div style="line-height:1;">
+          <div style="font-weight:600;color:var(--brand)">LawSections</div>
+          <small class="text-muted">Plain-English explanations • India</small>
+        </div>
+      </a>
+
+      <!-- MOBILE TOGGLER -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- RIGHT: NAV LINKS -->
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto align-items-center" style="gap: 10px;">
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" style="font-weight:500;">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="suggest" href="Suggestion.html">Suggest a Section</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- MAIN PAGE -->
+  <div class="page-bg">
+    <div class="container content-container">
+
+      <div class="row g-4">
+
+        <!-- FILTERS -->
+        <aside class="col-lg-4">
+          <div class="card p-3 controls shadow-sm">
+            <h5 class="mb-2">Filter by tags</h5>
+
+            
+            <label for="f-criminal" class="filter-label container-filter">#criminal</label>
+            <label for="f-murder" class="filter-label">#murder</label>
+            <label for="f-fraud" class="filter-label">#fraud</label>
+            <label for="f-family" class="filter-label">#family</label>
+            <label for="f-rape" class="filter-label">#rape</label>
+            <label for="f-attempt" class="filter-label">#attempt</label>
+            <a href="index.html" class="filter-label clearfilter">#Clear filters</a>
+
+            <hr>
+
+            <h6 class="mb-1">Jump to</h6>
+            <div class="d-flex flex-column container-jump">
+              <a href="#IPC-302" class="mb-1 jump">302 — Murder</a>
+              <a href="#IPC-307" class="mb-1 jump">Section 307 — Attempt to murder</a>
+              <a href="#IPC-376" class="mb-1 jump">Section 376 — Rape</a>
+              <a href="#IPC-420" class="mb-1 jump">Section 420 — Cheating</a>
+              <a href="#IPC-379" class="mb-1 jump">Section 379 — Theft</a>
+              <a href="#CRPC-125" class="mb-1 jump">Section 125 — Maintenance</a>
+              <a href="#IPC-304B" class="mb-1 jump">Section 304B - Dowry Death </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RESULTS -->
+        <section class="col-lg-8" id="Sections">
+          <h1 style="font-weight:700; text-decoration:underline; font-size:32px; margin-bottom:.25rem;">Sections</h1>
+          <p class="muted-small"> Click cards to expand.</p>
+          <input type="checkbox" id="f-criminal" class="filter-checkbox">
+          <input type="checkbox" id="f-murder" class="filter-checkbox">
+          <input type="checkbox" id="f-fraud" class="filter-checkbox">
+          <input type="checkbox" id="f-family" class="filter-checkbox">
+          <input type="checkbox" id="f-rape" class="filter-checkbox">
+          <input type="checkbox" id="f-attempt" class="filter-checkbox">
+          <div class="results mt-3">
+
+            <!-- ITEM 1 -->
+            <article class="item" id="IPC-302" data-tags="criminal,murder,offence">
+              <details class="stuf">
+                <summary>
+                  <div>
+                    <strong>Section 302 — Punishment for murder</strong>
+                    <div class="muted-small">India</div>
+                  </div>
+                  <span class="muted-small button">#criminal #murder</span>
+                </summary>
+                <div class="detail-body">
+                  <p><strong>Plain English:</strong> Intentional killing is murder. Punishment may be life imprisonment or death.</p>
+                  <strong>Statutory text</strong>
+                  <a class="stat-link" href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" rel="noopener">View on IndiaCode</a>
+                  <pre class="statutory">Whoever commits murder shall be punished with death or imprisonment for life.</pre>
+                  <a href="section 302.html" class="info">Click to know more about Section-302</a>
+                </div>
+              </details>
+            </article>
+
+            <!-- ITEM 2 -->
+            <article class="item" id="IPC-307" data-tags="criminal,attempt,violence">
+              <details>
+                <summary>
+                  <div>
+                    <strong>Section 307 — Attempt to murder</strong>
+                    <div class="muted-small">India</div>
+                  </div>
+                  <span class="muted-small">#criminal #attempt</span>
+                </summary>
+                <div class="detail-body">
+                  <p><strong>Plain English:</strong> An act done with intention/knowledge to cause death — but which doesn't result in death — may attract up to 10 years' jail; penalties increase if grievous hurt occurs.</p>
+
+                  <strong>Statutory text</strong>
+                  <a class="stat-link" href="https://www.indiacode.nic.in/show-data?actid=AC_CEN_5_23_00037_186045_1523266765688&orderno=345" target="_blank" rel="noopener">View on IndiaCode</a>
+                  <pre class="statutory">307. Attempt to murder.—Whoever does any act with such intention or knowledge, and under such circumstances that, if he by that act caused death, he would be guilty of murder, shall be punished with imprisonment for life, or with imprisonment of either description which may extend to ten years, and shall also be liable to fine.</pre>
+
+                  <a href="section 307.html" class="info">Click to know more about Section-307</a>
+                </div>
+              </details>
+            </article>
+
+            <!-- ITEM 3 -->
+            <article class="item" id="IPC-376" data-tags="criminal,rape,sexual offences">
+              <details>
+                <summary>
+                  <div>
+                    <strong>Section 376 — Punishment for rape</strong>
+                    <div class="muted-small">India</div>
+                  </div>
+                  <span class="muted-small">#criminal #rape</span>
+                </summary>
+                <div class="detail-body">
+                  <p><strong>Plain English:</strong> Sexual intercourse without consent is rape. The law prescribes severe imprisonment terms and fines; enhanced punishments exist for minors and repeat offenders.</p>
+
+                  <strong>Statutory text</strong>
+                  <a class="stat-link" href="https://www.indiacode.nic.in/show-data?actid=AC_CEN_5_23_00037_186045_1523266765688&orderno=425" target="_blank" rel="noopener">View on IndiaCode</a>
+                  <pre class="statutory">376. Punishment for rape.—(1) Whoever, except in the cases provided for in sub-section (2), commits rape, shall be punished with rigorous imprisonment of either description for a term which shall not be less than ten years, but which may extend to imprisonment for life, and shall also be liable to fine.
+
+(2) Whoever,— 
+(a) being a police officer; or 
+(b) being a public servant; or 
+(c) being a member of the armed forces; or 
+(d) being on the management or staff of a jail, remand home or other place of custody; or 
+(e) being on the management or staff of a hospital; or 
+(f) commits rape on a woman known to be pregnant; or 
+(g) commits rape on a woman under sixteen years of age; or 
+(h) commits rape causing grievous bodily harm, disfigurement or endangering life; or 
+(i) commits rape repeatedly on the same woman,— 
+shall be punished with rigorous imprisonment for a term which shall not be less than ten years but which may extend to imprisonment for life, and shall also be liable to fine.</pre>
+
+                  <a href="section 376.html" class="info">Click to know more about Section-376</a>
+                </div>
+              </details>
+            </article>
+
+            <!-- ITEM 4 -->
+            <article class="item" id="IPC-420" data-tags="criminal,fraud,cheating">
+              <details>
+                <summary>
+                  <div>
+                    <strong>Section 420 — Cheating & Fraud</strong>
+                    <div class="muted-small">India</div>
+                  </div>
+                  <span class="muted-small">#criminal #fraud</span>
+                </summary>
+                <div class="detail-body">
+                  <p><strong>Plain English:</strong> Serious forms of cheating/fraud where someone is induced to hand over property — punishable by jail up to 7 years and a fine.</p>
+
+                  <strong>Statutory text</strong>
+                  <a class="stat-link" href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" rel="noopener">View on IndiaCode</a>
+                  <pre class="statutory">420. Cheating and dishonestly inducing delivery of property.—Whoever cheats and thereby dishonestly induces the person deceived to deliver any property to any person, or to make, alter or destroy the whole or any part of a valuable security, or anything which is signed or sealed, and which is capable of being converted into a valuable security, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.</pre>
+
+                  <a href="section 420.html" class="info">Click to know more about Section-420</a>
+                </div>
+              </details>
+            </article>
+
+            <!-- ITEM 5 -->
+            <article class="item" id="IPC-379" data-tags="criminal,theft,property">
+              <details>
+                <summary>
+                  <div>
+                    <strong>Section 379 — Theft</strong>
+                    <div class="muted-small">India</div>
+                  </div>
+                  <span class="muted-small">#criminal #theft</span>
+                </summary>
+                <div class="detail-body">
+                  <p><strong>Plain English:</strong> Taking someone else's movable property dishonestly is theft; penalty can be up to 3 years' jail, or fine, or both.</p>
+
+                  <strong>Statutory text</strong>
+                  <a class="stat-link" href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" rel="noopener">View on IndiaCode</a>
+                  <pre class="statutory">379. Punishment for theft.—Whoever commits theft shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.</pre>
+
+                  <a href="section 379.html" class="info">Click to know more about Section-379</a>
+                </div>
+              </details>
+            </article>
+
+            <!-- ITEM 6 -->
+            <article class="item" id="CRPC-125" data-tags="civil,family,maintenance,crpc">
+              <details>
+                <summary>
+                  <div>
+                    <strong>Section 125 CrPC — Maintenance</strong>
+                    <div class="muted-small">India</div>
+                  </div>
+                  <span class="muted-small">#civil #family</span>
+                </summary>
+                <div class="detail-body">
+                  <p><strong>Plain English:</strong>If someone neglects to maintain dependent family (wife, children, parents), the magistrate can order monthly maintenance payments.</p>
+
+                  <strong>Statutory text</strong>
+                  <a class="stat-link" href="https://www.indiacode.nic.in/show-data?actid=AC_CEN_5_23_000010_197402_1517807320555&orderno=147" target="_blank" rel="noopener">View on IndiaCode</a>
+                  <pre class="statutory">125. Order for maintenance of wives, children and parents.—(1) If any person having sufficient means neglects or refuses to maintain—
+(a) his wife, unable to maintain herself, or
+(b) his legitimate or illegitimate minor child, whether married or not, unable to maintain itself, or
+(c) his legitimate or illegitimate child (not being a married daughter) who has attained majority, where such child is, by reason of any physical or mental abnormality or injury unable to maintain itself, or
+(d) his father or mother, unable to maintain himself or herself,
+a Magistrate of the first class may, upon proof of such neglect or refusal, order such person to make a monthly allowance for the maintenance of his wife or such child, or his father or mother, as the case may be, and, for that purpose, may examine the person so ordered and enforce the payment in the manner provided by this Code.</pre>
+
+                  <a href="CRPC 125.html" class="info">Click to know more about Section-125(CRPC-125)</a>
+                </div>
+              </details>
+            </article>
+           
+            <!-- ITEM 7 (304B is already present with statutory text as requested) -->
+            <article class="item" id="IPC-304B" data-tags="criminal,dowry,domestic">
+              <details>
+                <summary>
+                  <div>
+                    <strong>Section 304B — Dowry Death</strong>
+                    <div class="muted-small">India</div>
+                  </div>
+                  <span class="muted-small">#criminal #dowry #domestic</span>
+                </summary>
+                <div class="detail-body">
+                  <p><strong>Plain English:</strong> When a married woman dies under unnatural or suspicious circumstances within 7 years of marriage and she was subjected to dowry-related harassment shortly before her death, it is considered dowry death.</p>
+
+                  <strong>Statutory text</strong>
+                  <a class="stat-link" href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" rel="noopener">View on IndiaCode</a>
+                  <pre class="statutory">Section 304B: “Where the death of a woman is caused by burns, bodily injury, or occurs otherwise than under normal circumstances within seven years of marriage, and it is shown that soon before her death she was subjected to cruelty or harassment for dowry, such death shall be called ‘dowry death’ and the husband or his relatives shall be deemed to have caused her death.”</pre>
+
+                  <a href="section 304b.html" class="info">Click to know more about Section-304B</a>
+                </div>
+              </details>
+            </article>
+
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container content-container">
+      <div class="row">
+        <div class="col-md-8">
+          <strong>LawSections</strong> — Educational resource • Last updated: <span>2025-12-04</span>
+          <div class="mt-2 muted-small">If you want more sections added or corrections, contact the site admin.</div>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="muted-small">© 2025 • Not legal advice</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

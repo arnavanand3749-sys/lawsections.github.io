@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Using the font you imported */
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* Softer gray-blue background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Centers content vertically */
+        }
+
+        /* 2. Card Container */
+        .contact-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Soft shadow for depth */
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px #333333; /* Subtle lift effect */
+        }
+
+        /* 3. Typography Styling */
+        h1 {
+            color: #0056b3;
+            margin-top: 0;
+            font-size: 2.5rem;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .separator {
+            margin: 20px 0;
+            color: #aaa;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .separator::before, .separator::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+            margin: 0 10px;
+        }
+
+        /* 4. Action Buttons/Links */
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .email-btn {
+            background-color: #e7f1ff;
+            color: #0056b3;
+        }
+
+        .email-btn:hover {
+            background-color: #d0e4ff;
+        }
+
+        .linkedin-btn {
+            background-color: #0077b5; /* Official LinkedIn Blue */
+            color: white;
+            font-family: 'Comic Neue', cursive; /* Kept your preference */
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .linkedin-btn:hover {
+            background-color: #005582;
+        }
+        .home-btn{
+          display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            background-color: #e7f1ff;
+            color: black;  
+            transition: all 0.3s ease;
+        }
+        .home-btn:hover{
+            background-color: grey;
+            transform: scale(1.02);
+            box-shadow:0 10px 25px rgb(50,50,50);
+            color: white;
+        }
+
+        /* Icon styling */
+        .bi {
+            font-size: 1.3rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="contact-card">
+        <h1>Contact Me</h1>
+        <p>If you have any questions, suggestions, or feedback, I'd Love to hear it form you!</p>
+            <a href="mailto:arnav.anand3749@gmail.com" class="contact-btn email-btn"><i class="bi bi-envelope-fill"></i>arnav.anand3749@gmail.com</a>
+            <div class="separator">OR</div>
+            <p style="margin-bottom: 10px; font-size: 0.9rem;">You can connect with me on:</p>
+            <a href="https://www.linkedin.com/in/arnav-anand-123456789/" class="contact-btn linkedin-btn"><i class="bi bi-linkedin"> Linkedin</i></a>
+            <div class="separator">Homepage</div>
+            <a href="index.html" class="home-btn">Back to home</a>
+    </main>
+</body>
+</html>
