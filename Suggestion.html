@@ -3,58 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Law Sections — Search & Plain-English Explanations (India)</title>
+  <title>Suggest a Section — LawSections India</title>
 
-  <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="compliant.png">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
-  <meta name="description" content="Search Indian law sections (IPC, CrPC) with plain-English summaries, examples and sources. Educational only — not legal advice.">
+  <meta name="description" content="Suggest new Indian law sections (IPC, CrPC) or propose corrections to LawSections.">
 
   <style>
-    :root{
-      --brand:#05264a; --accent:#c59a3b;
+    /* --- MODERN THEME VARIABLES for NAV/FOOTER --- */
+    :root {
+      --brand-dark: #0f172a;       /* Deep Slate/Navy */
+      --brand-primary: #1e3a8a;    /* Trustworthy Blue */
+      --accent-gold: #b45309;      /* Legal Gold/Bronze */
+      --bg-body: #f3f4f6;          /* Soft Gray background for consistency */
+      --bg-card: #ffffff;
+      --text-main: #374151;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      
+      /* Original Variables retained for form/body styling */
+      --brand:#05264a; /* Original Navy for H1, H2, H3 */
+      --accent:#c59a3b; /* Original Accent Gold for buttons, etc. */
     }
-    body{ font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; color:#111827; background:#ffffff; }
-    h1,h2,h3{ font-family: 'Merriweather', serif; color:var(--brand); }
+
+    /* Original body styling, updated to use the modern body font/color */
+    body{ 
+        font-family: 'Inter', sans-serif; 
+        color: var(--text-main); 
+        background: var(--bg-card); /* Keep body background white as in the original suggestion page */
+    }
+    
+    h1,h2,h3{ 
+        font-family: 'Merriweather', serif; 
+        color:var(--brand); /* Keep original dark blue */
+    }
     .summary{ font-size:0.98rem; color:#1f2937; }
     .statutory{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace; background:#f8f9fa; padding:10px; border-radius:6px; white-space:pre-wrap; }
     .tag{ font-size:0.82rem; }
     .sticky-search{ position: sticky; top:1rem; z-index: 102; }
     .muted-small{ font-size:0.85rem; color:#6b7280; }
-    .navbar-backdrop{ backdrop-filter: blur(6px); background: rgba(255,255,255,0.90); border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1030; }
-    .accent{ color: var(--accent); }
+    
+    /* --- MODERN NAVBAR STYLES --- */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+      padding: 0.8rem 0;
+      position: sticky; top: 0; z-index: 1030; /* Ensure it stays fixed at the top */
+    }
+    .logo-box {
+      width: 42px; height: 42px;
+      background: var(--brand-dark);
+      color: #fff;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Merriweather", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      color: var(--text-main) !important;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--brand-primary) !important; }
+    
+    .btn-suggest {
+      background-color: var(--brand-dark);
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-suggest:hover {
+      background-color: var(--accent-gold);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    /* Alias the original accent button styling to the modern style for the form submit button */
     .btn-accent{ background: var(--accent); color: #fff; border: none; }
-    .accordion-button:focus{ box-shadow: 0 0 0 .2rem rgba(197,154,59,0.25); }
-    footer{ background:#f8f9fa; padding:1.75rem 0; margin-top:2.5rem; }
+    .btn-accent:hover { background-color: var(--accent-gold); }
+
+
+    /* --- MODERN FOOTER STYLES --- */
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--border-subtle);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      color: var(--text-muted);
+    }
+    .muted-small-footer {
+        font-size:0.85rem; 
+        color:var(--text-muted); 
+    }
+    
     @media (max-width:767px){
       .sticky-search{ position: static; }
     }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="navbar-backdrop navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div style="width:40px;height:40px;background:var(--brand);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-right:10px">L</div>
-        <div>
-          <div style="font-weight:600;color:var(--brand)" class="container-header">LawSections</div>
-          <small class="text-muted">Plain-English explanations • India</small>
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 12px; text-decoration: none;">
+        <div class="logo-box">L</div>
+        <div style="line-height:1.2;">
+          <div style="font-weight:800; color:var(--brand-dark); font-size:1.1rem; letter-spacing:-0.5px;">LawSections</div>
+          <small style="color:var(--text-muted); font-size:0.75rem; font-weight:500;">Simplified Indian Law</small>
         </div>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto align-items-center">
+        <ul class="navbar-nav ms-auto align-items-center" style="gap: 1rem;">
           <li class="nav-item"><a class="nav-link" href="index.html">Sections</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-accent btn-sm" href="Suggestion.html">Suggest a Section</a></li>
+          <li class="nav-item">
+            <a class="btn-suggest" href="Suggestion.html">Suggest Section <i class="bi bi-plus-lg"></i></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -65,7 +146,7 @@
         <div class="col-lg-8 mx-auto text-center">
           <h1 class="mb-3">Suggest a Section</h1>
           <p class="summary mb-4">Help us improve LawSections by suggesting new sections or corrections to existing ones. Your input makes this resource better for everyone.</p>
-          <form action="mailto:arnav.anand3749@gmail.com" method="POST">
+          <form action="mailto:arnav.anand3749@gmail.com" method="POST" enctype="text/plain">
             <div class="mb-3 text-start">
               <label for="sectionNumber" class="form-label">Section Number</label>
               <input type="text" class="form-control" id="sectionNumber" name="sectionNumber" placeholder="e.g., 420 IPC" required>
@@ -86,21 +167,29 @@
     </div>
   </main>
 
-  
-
-  <!-- CONTACT / FOOTER -->
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <strong>LawSections</strong> — Educational resource • Last updated: <span id="lastUpdated">2025-11-16</span>
-          <div class="mt-2 muted-small">If you want more sections added or corrections, contact the site admin.</div>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="d-flex align-items-center gap-2 mb-2">
+             <div style="background:var(--brand-dark); color:white; width:24px; height:24px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px;">L</div>
+             <span class="fw-bold" style="color:var(--brand-dark);">LawSections</span>
+          </div>
+            <p class="small mb-0">— Educational resource • Last updated: <strong>2025-11-16</strong></p>
+          <div class="mt-2 muted-small-footer">If you want more sections added or corrections, contact the site admin.</div>
         </div>
-        <div class="col-md-4 text-md-end">
-          <div class="muted-small">© <span id="yr"></span> • Not legal advice</div>
+        <div class="col-md-6 text-md-end">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Privacy</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Terms</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item">Not Legal Advice</li>
+          </ul>
         </div>
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
