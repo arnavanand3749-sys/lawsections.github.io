@@ -3,233 +3,366 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Law Sections — Search & Plain-English Explanations (India)</title>
+  <title>Section 125 CrPC — Maintenance of Dependants | LawSections</title>
 
-  <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
-  <meta name="description" content="Search Indian law sections (IPC, CrPC) with plain-English summaries, examples and sources. Educational only — not legal advice.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="compliant.png">
 
   <style>
-    :root{
-      --brand:#05264a; --accent:#c59a3b; --card:#f8fafc; --muted:#6b7280; --accent2:#0b5cff;
+    /* --- SHARED THEME (Matches Home Page) --- */
+    :root {
+      --brand-dark: #0f172a;       
+      --brand-primary: #1e3a8a;    
+      --accent-gold: #b45309;      
+      --bg-body: #f3f4f6;          
+      --bg-card: #ffffff;
+      --text-main: #374151;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      --crpc-color: #0d6efd; /* Use Bootstrap's primary/info blue for CrPC */
     }
-    body{ 
-        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; 
-        color:#111827; 
-        background:#ffffff; 
-        }
-    h1,h2,h3{ 
-        font-family: 'Merriweather', serif; 
-        color:var(--brand); 
-            }
-    .summary{ 
-        font-size:0.98rem; 
-        color:#1f2937; 
-            }
-    .statutory{ 
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace; background:#f8f9fa; 
-        padding:10px; 
-        border-radius:6px; 
-        white-space:pre-wrap; 
-              }
-    .tag{ 
-        font-size:0.82rem; 
-        }
-    .sticky-search{ 
-        position: sticky; 
-        top:1rem; 
-        z-index: 102; 
-                  }
-    .muted-small{ 
-        font-size:0.85rem; 
-        color:#6b7280; 
-                }
-    .navbar-backdrop{ 
-        backdrop-filter: blur(6px); 
-        background: rgba(255,255,255,0.90); 
-        border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1030; 
-                    }
-    .accent{ 
-        color: var(--accent); 
-           }
-    .btn-accent{ 
-        background: var(--accent); 
-        color: #fff; 
-        border: none; 
-               }
-    .accordion-button:focus{ 
-        box-shadow: 0 0 0 .2rem rgba(197,154,59,0.25); 
-        }
-    footer{ 
-        background:#f8f9fa; 
-        padding:1.75rem 0; 
-        margin-top:2.5rem; 
-          }
-    @media (max-width:767px){
-      .sticky-search{ position: static; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      line-height: 1.7;
     }
-    .card{
-        background:var(--card);
-        padding:18px;
-        border-radius:12px;
-        box-shadow:0 6px 18px rgba(2,6,23,0.06);margin-bottom:18px;
-        margin-right: 2px;
-        margin-left: 2px;
-        border: 3px solid #05264a;
-         }
-    table{
-        width:100%;
-        border-collapse:collapse;
-        margin:12px 0
-         }
-    th,td{
-        padding:10px;
-        border-bottom:1px solid #e6eef8;
-        text-align:left
-         }
-    th{
-        background:#f1f8ff
-      }
-      .faq dt{
-        font-weight:600;
-        margin-top:12px
-             }
+
+    h1, h2, h3, h4 {
+      font-family: "Merriweather", serif;
+      color: var(--brand-dark);
+      margin-top: 1.5rem;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+      padding: 0.8rem 0;
+    }
+    .logo-box {
+      width: 42px; height: 42px;
+      background: var(--brand-dark);
+      color: #fff;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Merriweather", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      color: var(--text-main) !important;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--brand-primary) !important; }
+    
+    .btn-suggest {
+      background-color: var(--brand-dark);
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-suggest:hover {
+      background-color: var(--accent-gold);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* --- PAGE CONTENT --- */
+    .content-container {
+      max-width: 850px; /* Reading width */
+      margin: 2rem auto;
+      padding-bottom: 3rem;
+    }
+
+    /* Breadcrumb styling */
+    .back-link {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--brand-primary); }
+
+    /* Cards */
+    .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      animation: fadeIn 0.5s ease;
+    }
+    
+    /* Highlight box for key text */
+    .highlight-box {
+      background: #e0f2fe; /* Light blue for CrPC focus */
+      border-left: 4px solid var(--crpc-color);
+      padding: 1.25rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      color: var(--crpc-color);
+    }
+
+    /* Tables */
+    .table-custom {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 1rem 0;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .table-custom th {
+      background: #f8fafc;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+    .table-custom td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+    }
+    .table-custom tr:last-child td { border-bottom: none; }
+
+    /* Lists */
+    ol li, ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ Details */
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      font-weight: 700;
+      color: var(--brand-dark);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--border-subtle);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="navbar-backdrop navbar navbar-expand-lg">
+
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div style="width:40px;height:40px;background:var(--brand);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-right:10px">L</div>
-        <div>
-          <div style="font-weight:600;color:var(--brand)" class="container-header">LawSections</div>
-          <small class="text-muted">Plain-English explanations • India</small>
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 12px; text-decoration: none;">
+        <div class="logo-box">L</div>
+        <div style="line-height:1.2;">
+          <div style="font-weight:800; color:var(--brand-dark); font-size:1.1rem; letter-spacing:-0.5px;">LawSections</div>
+          <small style="color:var(--text-muted); font-size:0.75rem; font-weight:500;">Simplified Indian Law</small>
         </div>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Sections</a></li>
+        <ul class="navbar-nav ms-auto align-items-center" style="gap: 1rem;">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-accent btn-sm" href="Suggestion.html">Suggest a Section</a></li>
+          <li class="nav-item">
+            <a class="btn-suggest" href="Suggestion.html">Suggest Section <i class="bi bi-plus-lg"></i></a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <article style="padding: 20px;">
-      <h2>What does Section 125 CrPC do?</h2>
-      <p>Section 125 CrPC provides a quick, summary remedy for <strong>maintenance</strong> (money support) to certain persons who are unable to maintain themselves. It is meant to prevent destitution and vagrancy by obliging able persons to support their dependants.</p>
 
-      <h3>Who can claim maintenance?</h3>
+  <main class="container content-container">
+    
+    <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to All Sections</a>
+
+    <article class="content-card">
+      <span class="badge bg-info mb-2">Code of Criminal Procedure (CrPC)</span>
+      <h1 class="mb-3" style="font-size:2.5rem; font-weight:700;">Section 125 CrPC</h1>
+      <p class="lead text-muted">Order for Maintenance of Wives, Children, and Parents</p>
+      
+      <hr class="my-4 opacity-25">
+
+      <h3 class="h4">What is the purpose of Section 125 CrPC?</h3>
+      <p>Section 125 of the Code of Criminal Procedure is a crucial piece of social legislation designed to provide a **summary, speedy, and simple remedy** for maintenance. Its primary goal is to **prevent destitution and vagrancy** by ensuring financial support for certain vulnerable dependants.</p>
+      
+      <div class="highlight-box">
+        This section is a protective measure forcing a person with sufficient means to support their immediate dependants who are unable to maintain themselves.
+      </div>
+      
+      <h3 class="h4 mt-4">Who can Claim Maintenance?</h3>
+      <p>The following individuals are eligible to seek maintenance under this section:</p>
       <ul>
-        <li><strong>Wife</strong> (including divorced or separated wives in some circumstances);</li>
-        <li><strong>Children</strong> (legitimate or illegitimate) who are unable to maintain themselves;</li>
-        <li><strong>Parents</strong> who are unable to maintain themselves (including widowed or divorced parents);</li>
-        <li>In some cases, a <strong>person treated as wife</strong> or dependent relatives may also claim under similar principles.</li>
+        <li>**Wife:** Includes a legally divorced or separated woman who has not remarried.</li>
+        <li>**Minor Children:** Legitimate or illegitimate children who are unable to maintain themselves.</li>
+        <li>**Major Children:** Legitimate or illegitimate children (not being married daughters) who are physically or mentally abnormal and unable to maintain themselves.</li>
+        <li>**Parents:** Father or mother, unable to maintain themselves.</li>
       </ul>
 
-      <h3>Basic requirements</h3>
-      <p>To succeed in a Section 125 claim, the claimant must generally show:</p>
+      <h3 class="h4 mt-4">Basic Requirements to Claim Maintenance</h3>
+      <p>The claimant must establish:</p>
       <ol>
-        <li>The claimant is one of the persons covered by the section (wife/child/parent).</li>
-        <li>The claimant is unable to maintain themselves.</li>
-        <li>The respondent (usually husband/father/son) has sufficient means to pay maintenance.</li>
-        <li>There is no valid reason for the respondent's refusal to maintain (e.g., the claimant is living in adultery or is capable of earning but refuses).</li>
+        <li>**Relationship:** They fall into one of the covered categories (Wife/Child/Parent).</li>
+        <li>**Inability to Maintain:** They lack sufficient means to support themselves.</li>
+        <li>**Refusal/Neglect:** The respondent (husband/father/son/daughter) has sufficient means but neglects or refuses to provide maintenance.</li>
       </ol>
     </article>
 
-    <section class="card">
-      <h2>How much maintenance is awarded?</h2>
-      <p>Court decides on a case-by-case basis considering factors like:</p>
+    <section class="content-card">
+      <h2 class="h3 mb-3">Determining Quantum and Procedure</h2>
+      
+      <h4 class="h5">How is the Amount Decided?</h4>
+      <p>The Magistrate's Court decides the quantum on a case-by-case basis. Key factors include:</p>
       <ul>
-        <li>Income and means of the respondent;</li>
-        <li>Reasonable needs of the claimant (food, clothing, education for children, medical needs);</li>
-        <li>Standard of living previously enjoyed;</li>
-        <li>Any other sources of income available to claimant.</li>
+        <li>The **income and financial status** (means) of the respondent.</li>
+        <li>The **reasonable needs** and expenses of the claimant.</li>
+        <li>The **standard of living** the claimant is accustomed to.</li>
+        <li>Any other sources of income or property the claimant may possess.</li>
       </ul>
-      <p>Courts aim for <em>fair and reasonable</em> maintenance — not punishment or enrichment.</p>
-    </section>
 
-    <section class="card">
-      <h2>Procedure</h2>
+      <h4 class="h5 mt-4">The Procedure (Summary Trial)</h4>
       <ol>
-        <li>Claim is filed in the Magistrate's Court (summary proceeding).</li>
-        <li>Court issues notice to the respondent and conducts a brief hearing.</li>
-        <li>Evidence (oral/documentary) is taken and court decides whether maintenance is payable and the quantum.</li>
-        <li>Maintenance orders are enforceable; failure to comply can lead to attachment of property or imprisonment in extreme cases (summary contempt-like procedure).</li>
+        <li>The eligible person files a petition in the Magistrate's Court.</li>
+        <li>The Court issues a notice to the respondent.</li>
+        <li>The Court conducts a summary inquiry, taking oral and documentary evidence (often prioritizing speed over deep legal technicalities).</li>
+        <li>If the grounds are met, the Court issues an **order** to pay monthly maintenance from the date of the application or the date of the order.</li>
       </ol>
     </section>
 
-    <section class="card">
-      <h2>Key facts at a glance</h2>
-      <table>
-        <tr><th>Feature</th><th>Details</th></tr>
-        <tr><td>Nature</td><td>Summary criminal proceeding (protective remedy)</td></tr>
-        <tr><td>Who can file</td><td>Wife, children, parents (as per Section 125)</td></tr>
-        <tr><td>Court</td><td>Magistrate's Court</td></tr>
-        <tr><td>Enforcement</td><td>Attachment of property, garnishee proceedings, or imprisonment for non-compliance in certain cases</td></tr>
+    <section class="content-card">
+      <h2 class="h3 mb-3">Key Facts at a Glance</h2>
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>**Nature of Proceeding**</td>
+            <td>Summary Criminal (protective, quasi-civil remedy)</td>
+          </tr>
+          <tr>
+            <td>**Jurisdiction**</td>
+            <td>Judicial Magistrate of the First Class</td>
+          </tr>
+          <tr>
+            <td>**Enforcement**</td>
+            <td>Warrant for levying the amount, attachment of property, or imprisonment (for a maximum of one month per month's unpaid allowance)</td>
+          </tr>
+          <tr>
+            <td>**Modification**</td>
+            <td>Orders can be modified if there is a **material change** in circumstances (Sec 127 CrPC).</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
-    <section class="card">
-      <h2>Simple examples</h2>
-      <p><strong>Example A:</strong> A wife is deserted by her husband and has no income. She files under Section 125. If the husband has means, court may order monthly maintenance.</p>
-      <p><strong>Example B:</strong> An elderly parent with no means claims maintenance from an adult child who works. Court can order reasonable monthly support.</p>
+    <section class="content-card">
+      <h2 class="h3 mb-3"><i class="bi bi-lightbulb text-warning me-2"></i>Simple Examples</h2>
+      <div class="mb-3">
+        <strong>Example A (Wife):</strong>
+        <p class="text-muted">A woman, separated from her employed husband, files for maintenance as she is only a homemaker with no income. The Court, finding the husband has sufficient means, orders a fixed monthly support amount.</p>
+      </div>
+      <div class="mb-3">
+        <strong>Example B (Parents):</strong>
+        <p class="text-muted">An elderly, ailing mother who transferred all her property to her son, now finds herself neglected and without income. She successfully claims maintenance from the adult son under this section.</p>
+      </div>
     </section>
-
-    <section class="card">
-      <h2>Landmark cases & legal notes</h2>
+    
+    <section class="content-card">
+      <h2 class="h3 mb-3">Landmark Cases & Legal Principles</h2>
       <ul>
-        <li><strong>Shivkant Shukla v. State of U.P.</strong> — emphasised the protective nature of Section 125 and the need to prevent vagrancy.</li>
-        <li><strong>Shiv Raj v. State of Haryana</strong> — courts look at reasonable needs and respondent's means when fixing quantum.</li>
-        <li>Section 125 is civil in effect but a summary criminal procedure — courts adopt a liberal approach in favour of maintenance claimants.</li>
+        <li>**Mohd. Ahmed Khan v. Shah Bano Begum (1985):** A landmark case that confirmed the secular nature of Section 125 CrPC, establishing its universal applicability to all citizens regardless of their personal law (though Parliament later passed the Muslim Women (Protection of Rights on Divorce) Act).</li>
+        <li>**Rajnesh v. Neha (2020):** The Supreme Court laid down detailed guidelines for calculating maintenance, emphasizing the need for both parties to file sworn affidavits disclosing their assets and liabilities for fair assessment.</li>
       </ul>
-      <p><em>Note:</em> For exact statutory wording consult the official CrPC text (IndiaCode) if you want the verbatim clause added.</p>
     </section>
 
-    <section class="card faq">
-      <h2>Frequently Asked Questions (FAQ)</h2>
-      <dl>
-        <dt>Who can claim maintenance under Section 125 CrPC?</dt>
-        <dd>Wife, children (legitimate or illegitimate) who cannot maintain themselves, and parents who are unable to maintain.</dd>
+    <section class="content-card">
+      <h2 class="h3 mb-4">Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <span class="faq-question">Is Section 125 CrPC a Civil or Criminal Proceeding?</span>
+        <p class="text-muted">It is a **summary criminal proceeding**, but its objective is civil (providing financial relief). Its inclusion in the CrPC ensures quick disposal and effective enforcement mechanisms like imprisonment for non-payment.</p>
+      </div>
 
-        <dt>Is Section 125 only for married wives?</dt>
-        <dd>No. Courts have sometimes allowed claims from wives separated or divorced in certain circumstances; there are also other statutory remedies for divorced spouses.</dd>
+      <div class="faq-item">
+        <span class="faq-question">Does a wife lose the right to maintenance if she is divorced?</span>
+        <p class="text-muted">No. Section 125 explicitly covers a divorced wife who has not remarried, provided she is unable to maintain herself. (Specific personal laws may offer other remedies as well).</p>
+      </div>
 
-        <dt>Can the maintenance order be modified?</dt>
-        <dd>Yes. Either party can approach the court later to vary the quantum if there is a material change in circumstances (increase/decrease in income or needs).</dd>
-
-        <dt>What happens if respondent refuses to pay?</dt>
-        <dd>The court can enforce the order through attachment, garnishee, or in extreme cases, imprisonment for non-compliance under the summary procedure.</dd>
-      </dl>
+      <div class="faq-item">
+        <span class="faq-question">Can the maintenance order be retrospective?</span>
+        <p class="text-muted">Yes. The Magistrate has the discretion to award maintenance from the **date of the order** or from the **date of the application**.</p>
+      </div>
     </section>
+
   </main>
 
-  
-
-  <!-- CONTACT / FOOTER -->
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <strong>LawSections</strong> — Educational resource • Last updated: <span id="lastUpdated">2025-11-16</span>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="d-flex align-items-center gap-2 mb-2">
+             <div style="background:var(--brand-dark); color:white; width:24px; height:24px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px;">L</div>
+             <span class="fw-bold" style="color:var(--brand-dark);">LawSections</span>
+          </div>
+          <p class="small mb-0">— Educational resource • Last updated: <strong>2025-11-16</strong></p>
           <div class="mt-2 muted-small">If you want more sections added or corrections, contact the site admin.</div>
         </div>
-        <div class="col-md-4 text-md-end">
-          <div class="muted-small">© <span id="yr"></span> • Not legal advice</div>
+        <div class="col-md-6 text-md-end">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Privacy</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Terms</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item">Not Legal Advice</li>
+          </ul>
         </div>
       </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

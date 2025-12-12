@@ -15,7 +15,6 @@
 
   <style>
     :root {
-      /* Refined Color Palette */
       --brand-dark: #0f172a;       /* Deep Slate/Navy */
       --brand-primary: #1e3a8a;    /* Trustworthy Blue */
       --accent-gold: #b45309;      /* Legal Gold/Bronze */
@@ -198,7 +197,10 @@
       border-color: #cbd5e1;
     }
 
-    /* Target highlight */
+    .item {
+      scroll-margin-top: 100px; 
+    }
+
     .item:target details {
       border: 2px solid var(--accent-gold);
       box-shadow: 0 0 0 4px rgba(180, 83, 9, 0.1);
@@ -339,7 +341,7 @@
 
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="ui.html" style="gap: 12px; text-decoration: none;">
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 12px; text-decoration: none;">
         <div class="logo-box">L</div>
         <div style="line-height:1.2;">
           <div style="font-weight:800; color:var(--brand-dark); font-size:1.1rem; letter-spacing:-0.5px;">LawSections</div>
@@ -353,7 +355,7 @@
 
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto align-items-center" style="gap: 1rem;">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <li class="nav-item">
             <a class="btn-suggest" href="Suggestion.html">Suggest Section <i class="bi bi-plus-lg"></i></a>
@@ -400,8 +402,9 @@
             <a href="#IPC-376" class="jump-link"><i class="bi bi-chevron-right me-1"></i> Sec 376: Rape</a>
             <a href="#IPC-420" class="jump-link"><i class="bi bi-chevron-right me-1"></i> Sec 420: Cheating</a>
             <a href="#IPC-379" class="jump-link"><i class="bi bi-chevron-right me-1"></i> Sec 379: Theft</a>
-            <a href="#IPC-304B" class="jump-link"><i class="bi bi-chevron-right me-1"></i> Sec 304B: Dowry Death</a>
             <a href="#CRPC-125" class="jump-link"><i class="bi bi-chevron-right me-1"></i> Sec 125 CrPC: Maintenance</a>
+            <a href="#IPC-304B" class="jump-link"><i class="bi bi-chevron-right me-1"></i> Sec 304B: Dowry Death</a>
+            
           </div>
         </div>
       </aside>
@@ -577,7 +580,8 @@
              <div style="background:var(--brand-dark); color:white; width:24px; height:24px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px;">L</div>
              <span class="fw-bold" style="color:var(--brand-dark);">LawSections</span>
           </div>
-          <p class="small mb-0">Making Indian law accessible since 2025.</p>
+            <p class="small mb-0">— Educational resource • Last updated: <strong>2025-11-16</strong></p>
+          <div class="mt-2 muted-small">If you want more sections added or corrections, contact the site admin.</div>
         </div>
         <div class="col-md-6 text-md-end">
           <ul class="list-inline mb-0 small">

@@ -3,209 +3,343 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Law Sections — Search & Plain-English Explanations (India)</title>
+  <title>Section 376 IPC — Punishment for Rape | LawSections</title>
 
-  <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
-  <meta name="description" content="Search Indian law sections (IPC, CrPC) with plain-English summaries, examples and sources. Educational only — not legal advice.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="compliant.png">
 
   <style>
-    :root{
-      --brand:#05264a; --accent:#c59a3b; --card:#f8fafc; --muted:#6b7280; --accent2:#0b5cff;
+    :root {
+      --brand-dark: #0f172a;       
+      --brand-primary: #1e3a8a;    
+      --accent-gold: #b45309;      
+      --bg-body: #f3f4f6;          
+      --bg-card: #ffffff;
+      --text-main: #374151;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
     }
-    body{ 
-        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; 
-        color:#111827; 
-        background:#ffffff; 
-        }
-    h1,h2,h3{ 
-        font-family: 'Merriweather', serif; 
-        color:var(--brand); 
-            }
-    .summary{ 
-        font-size:0.98rem; 
-        color:#1f2937; 
-            }
-    .statutory{ 
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace; background:#f8f9fa; 
-        padding:10px; 
-        border-radius:6px; 
-        white-space:pre-wrap; 
-              }
-    .tag{ 
-        font-size:0.82rem; 
-        }
-    .sticky-search{ 
-        position: sticky; 
-        top:1rem; 
-        z-index: 102; 
-                  }
-    .muted-small{ 
-        font-size:0.85rem; 
-        color:#6b7280; 
-                }
-    .navbar-backdrop{ 
-        backdrop-filter: blur(6px); 
-        background: rgba(255,255,255,0.90); 
-        border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1030; 
-                    }
-    .accent{ 
-        color: var(--accent); 
-           }
-    .btn-accent{ 
-        background: var(--accent); 
-        color: #fff; 
-        border: none; 
-               }
-    .accordion-button:focus{ 
-        box-shadow: 0 0 0 .2rem rgba(197,154,59,0.25); 
-        }
-    footer{ 
-        background:#f8f9fa; 
-        padding:1.75rem 0; 
-        margin-top:2.5rem; 
-          }
-    @media (max-width:767px){
-      .sticky-search{ position: static; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      line-height: 1.7;
     }
-    .card{
-        background:var(--card);
-        padding:18px;
-        border-radius:12px;
-        box-shadow:0 6px 18px rgba(2,6,23,0.06);margin-bottom:18px;
-        margin-right: 2px;
-        margin-left: 2px;
-        border: 3px solid #05264a;
-         }
-    table{
-        width:100%;
-        border-collapse:collapse;
-        margin:12px 0;
-         }
-    th,td{
-        padding:10px;
-        border-bottom:1px solid #e6eef8;
-        text-align:left;
-         }
-    th{
-        background:#f1f8ff
-      }
-      .faq dt{
-        font-weight:600;
-        margin-top:12px;
-             }
+
+    h1, h2, h3, h4 {
+      font-family: "Merriweather", serif;
+      color: var(--brand-dark);
+      margin-top: 1.5rem;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+      padding: 0.8rem 0;
+    }
+    .logo-box {
+      width: 42px; height: 42px;
+      background: var(--brand-dark);
+      color: #fff;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Merriweather", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      color: var(--text-main) !important;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--brand-primary) !important; }
+    
+    .btn-suggest {
+      background-color: var(--brand-dark);
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-suggest:hover {
+      background-color: var(--accent-gold);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* --- PAGE CONTENT --- */
+    .content-container {
+      max-width: 850px; /* Reading width */
+      margin: 2rem auto;
+      padding-bottom: 3rem;
+    }
+
+    /* Breadcrumb styling */
+    .back-link {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--brand-primary); }
+
+    /* Cards */
+    .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      animation: fadeIn 0.5s ease;
+    }
+    
+    /* Highlight box for key text */
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--brand-primary);
+      padding: 1.25rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      color: #1e3a8a;
+    }
+
+    /* Tables */
+    .table-custom {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 1rem 0;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .table-custom th {
+      background: #f8fafc;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+    .table-custom td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+    }
+    .table-custom tr:last-child td { border-bottom: none; }
+
+    /* Lists */
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ Details */
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      font-weight: 700;
+      color: var(--brand-dark);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--border-subtle);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="navbar-backdrop navbar navbar-expand-lg">
+
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div style="width:40px;height:40px;background:var(--brand);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-right:10px">L</div>
-        <div>
-          <div style="font-weight:600;color:var(--brand)" class="container-header">LawSections</div>
-          <small class="text-muted">Plain-English explanations • India</small>
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 12px; text-decoration: none;">
+        <div class="logo-box">L</div>
+        <div style="line-height:1.2;">
+          <div style="font-weight:800; color:var(--brand-dark); font-size:1.1rem; letter-spacing:-0.5px;">LawSections</div>
+          <small style="color:var(--text-muted); font-size:0.75rem; font-weight:500;">Simplified Indian Law</small>
         </div>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Sections</a></li>
+        <ul class="navbar-nav ms-auto align-items-center" style="gap: 1rem;">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-accent btn-sm" href="Suggestion.html">Suggest a Section</a></li>
+          <li class="nav-item">
+            <a class="btn-suggest" href="Suggestion.html">Suggest Section <i class="bi bi-plus-lg"></i></a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <article style="padding: 20px;">
-      <h2>What does Section 376 IPC cover?</h2>
-      <p>Section 376 IPC deals with the offence of <strong>rape</strong> and prescribes the punishment for committing rape. The section has been amended several times (notably by the Criminal Law (Amendment) Act, 2013) to broaden the definitions and increase penalties.</p>
 
-      <h3>Plain-English definition</h3>
-      <p>Rape includes sexual intercourse or other sexual acts carried out without the other person’s consent, or by coercion, fraud, or abuse of authority. Section 376 applies where the prosecution proves <strong>intention</strong> or <strong>knowledge</strong> that the act was non-consensual.</p>
+  <main class="container content-container">
+    
+    <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to All Sections</a>
 
-      <h3>Punishments under Section 376 (summary)</h3>
+    <article class="content-card">
+      <span class="badge bg-danger mb-2">Offences Against Women & Minors</span>
+      <h1 class="mb-3" style="font-size:2.5rem; font-weight:700;">Section 376 IPC</h1>
+      <p class="lead text-muted">Punishment for Rape</p>
+      
+      <hr class="my-4 opacity-25">
+
+      <h3 class="h4">What does Section 376 cover?</h3>
+      <p>Section 376 prescribes the punishment for the offence of <strong>rape</strong>, as defined in Section 375 IPC. The law has been significantly tightened by amendments, particularly the 2013 and 2018 Criminal Law Amendment Acts.</p>
+      
+      <div class="highlight-box">
+        The core legal requirement is <strong>lack of free and voluntary consent</strong> for the sexual act. Consent obtained by fear, fraud, or abuse of authority is not valid.
+      </div>
+      
+      <h3 class="h4 mt-4">Punishment Categories (Summary)</h3>
+      <p>The penalty varies depending on the specific circumstances of the crime:</p>
       <ul>
-        <li><strong>General rape:</strong> Rigorous imprisonment for a term (varies by subsection) and fine. Certain sub-sections set a minimum term.</li>
-        <li><strong>Aggravated forms:</strong> Rape by a group, on a woman under a certain age, or causing grievous injury may attract higher minimums — often 10 years or more, and in specific cases up to life imprisonment.</li>
-        <li><strong>Rape of a minor:</strong> Separate and stricter provisions exist (e.g., sections added/renamed like 376A/376AB/376DA depending on amendments) with higher minimum sentences and, in rare cases, death penalty for the gravest offences involving children.</li>
+        <li><strong>General Rape (Sec 376(1)):</strong> Rigorous imprisonment for not less than **7 years**, which may extend to life imprisonment, and a fine.</li>
+        <li><strong>Aggravated Rape:</strong> Higher minimum punishments (often **10 years to life**) apply when the victim is below a certain age, is a police officer's wife, a public servant abuses their position, or the act is committed by a group (gang rape).</li>
+        <li><strong>Rape Causing Death/PVS:</strong> In cases of rape causing death or leaving the woman in a persistent vegetative state (PVS), the punishment is **rigorous imprisonment for not less than 20 years, or life imprisonment, or death**.</li>
       </ul>
-
-      <p><em>Note:</em> The exact punishment depends on the particular sub-section used in the charge, and the law has several specified sub-clauses. For authoritative text, consult the official Government publications (IndiaCode) and the Criminal Law (Amendment) Acts.</p>
+      <p class="text-muted small mt-2">The exact punishment is determined by the specific sub-section (e.g., 376(2), 376A, 376D) under which the accused is charged.</p>
     </article>
 
-    <section class="card">
-      <h2>Key facts at a glance</h2>
-      <table>
-        <tr><th>Feature</th><th>Details</th></tr>
-        <tr><td>Nature of offence</td><td>Cognizable, usually non-bailable, non-compoundable</td></tr>
-        <tr><td>Trial court</td><td>Sessions Court / Special Courts (POCSO/NCB courts in specific cases)</td></tr>
-        <tr><td>Relevant laws</td><td>IPC Section 376 and related sections; Criminal Law (Amendment) Acts (2013, 2018) and POCSO Act for child victims</td></tr>
+    <section class="content-card">
+      <h2 class="h3 mb-3">Key Facts at a Glance</h2>
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nature of Offence</strong></td>
+            <td>Cognizable, Non-bailable, Non-compoundable (cannot be settled out of court)</td>
+          </tr>
+          <tr>
+            <td><strong>Trial Court</strong></td>
+            <td>Court of Session. Trials are often held in-camera (private) to protect the victim.</td>
+          </tr>
+          <tr>
+            <td><strong>Relevant Laws</strong></td>
+            <td>IPC Sections 375 & 376, Criminal Law Amendment Acts (2013, 2018), and **POCSO Act** (for child victims).</td>
+          </tr>
+        </tbody>
       </table>
 
-      <h3>Difference: Section 376 vs POCSO / Other Sections</h3>
-      <p>Section 376 applies to rape of adult women and certain aggravated categories. When the victim is a child (below 18), the <strong>Protection of Children from Sexual Offences (POCSO) Act</strong> usually applies and contains specific offences and penalties (often stricter). Many cases involve both IPC and POCSO charges.</p>
+      <h3 class="h4 mt-4">Distinction: IPC vs. POCSO Act</h3>
+      <p>Section 376 IPC primarily covers the rape of **adult women**. When the victim is a **child (below 18 years)**, the **Protection of Children from Sexual Offences (POCSO) Act** is invoked. POCSO contains separate, specific offences for child sexual abuse and typically carries even stricter punishments than the general IPC provisions.</p>
     </section>
 
-    <section class="card">
-      <h2>Simple examples</h2>
-      <p><strong>Example A (Rape):</strong> A forces sexual intercourse on B without consent. → Section 376 applies; offender faces rigorous imprisonment and fine.</p>
-      <p><strong>Example B (Aggravated):</strong> A and others gang-rape C, causing serious injury. → Aggravated sub-sections of Section 376 apply; minimum and higher terms follow.</p>
-      <p><strong>Example C (Child victim):</strong> D sexually assaults a 12-year-old. → POCSO provisions and specific IPC child-rape sections apply; very stringent punishments follow.</p>
+    <section class="content-card">
+      <h2 class="h3 mb-3"><i class="bi bi-lightbulb text-warning me-2"></i>Simple Examples</h2>
+      <div class="mb-3">
+        <strong>Example A (General Rape):</strong>
+        <p class="text-muted">A coerces his neighbor B into sexual intercourse against her will. This is a clear case of rape and is punishable under Section 376 IPC (likely subsection 1).</p>
+      </div>
+      <div class="mb-3">
+        <strong>Example B (Aggravated Rape - Group):</strong>
+        <p class="text-muted">A, B, and C jointly assault and rape D in a public place. This attracts Section 376D (Gang Rape) with a minimum punishment of 20 years to life imprisonment.</p>
+      </div>
     </section>
     
-    <section class="card">
-      <h2>Landmark developments & cases</h2>
-      <ul>
-        <li><strong>Nirbhaya case (2012)</strong> — led to the Criminal Law (Amendment) Act, 2013 which expanded definitions and increased penalties for sexual offences.</li>
-        <li><strong>Criminal Law (Amendment) Act, 2013</strong> — introduced new offences, higher minimum sentences, and special procedures for sexual violence cases.</li>
-        <li><strong>Subsequent amendments (2018 etc.)</strong> — further clarified penalties and introduced stricter minimums for certain aggravated acts and child victims.</li>
+    <section class="content-card">
+      <h2 class="h3 mb-3">Landmark Developments & Legal Changes</h2>
+      <ul class="list-unstyled">
+        <li class="mb-3">
+          <strong style="color:var(--brand-primary);">Criminal Law (Amendment) Act, 2013:</strong>
+          <div class="small text-muted">A major overhaul following the Nirbhaya case. It expanded the definition of 'rape' (Section 375) and introduced harsher minimum sentences for various sexual offences.</div>
+        </li>
+        <li class="mb-3">
+          <strong style="color:var(--brand-primary);">Criminal Law (Amendment) Act, 2018:</strong>
+          <div class="small text-muted">Introduced the **Death Penalty** for rape of girls under 12 years of age and increased minimum jail terms for rape of girls under 16 years.</div>
+        </li>
+        <li>
+          <a href="https://www.indiacode.nic.in/handle/123456789/1362/simple-search?page-token=c94b809ab7bf&page-token-value=9c6946ad68815b43c01e2f75dfee0276&nccharset=3BB5E9DB&query=376%3APunishment+for+rape.&btngo=&searchradio=section#collapse46152" target="_blank" rel="noopener" class="fw-bold text-decoration-none" style="color:var(--accent-gold);">View Official Statutory Text on IndiaCode</a>
+        </li>
       </ul>
-      <p>For exact, up-to-date statutory text and subsection details, refer to official sources such as <a href="https://www.indiacode.nic.in/handle/123456789/1362/simple-search?page-token=c94b809ab7bf&page-token-value=9c6946ad68815b43c01e2f75dfee0276&nccharset=3BB5E9DB&query=376%3APunishment+for+rape.&btngo=&searchradio=section#collapse46152" target="_blank" rel="noopener">IndiaCode</a>.</p>
     </section>
 
-    <section class="card faq">
-      <h2>Frequently Asked Questions (FAQ)</h2>
-      <dl>
-        <dt>What is the punishment for rape under Section 376?</dt>
-        <dd>Punishment varies by sub-section — generally involves rigorous imprisonment (minimum terms apply for certain categories), may extend to life imprisonment, and includes a fine.</dd>
+    <section class="content-card">
+      <h2 class="h3 mb-4">Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <span class="faq-question">What is the punishment for gang rape?</span>
+        <p class="text-muted">The minimum punishment for gang rape (Sec 376D) is **rigorous imprisonment for 20 years**, which can extend to imprisonment for life, and a fine.</p>
+      </div>
 
-        <dt>Is rape bailable?</dt>
-        <dd>Rape is generally considered a serious, non-bailable offence. Whether bail is granted depends on facts, the subsection charged, and court discretion.</dd>
+      <div class="faq-item">
+        <span class="faq-question">Can a rape charge be withdrawn?</span>
+        <p class="text-muted">No. Rape is a non-compoundable offence. Once the charge is filed, the case must be prosecuted by the State and cannot be legally withdrawn or settled by the victim.</p>
+      </div>
 
-        <dt>Does Section 376 cover child rape?</dt>
-        <dd>When the victim is a child, the POCSO Act provides specific offences and penalties. Many child-rape cases are prosecuted under both IPC child-rape sections and POCSO.</dd>
-
-        <dt>Can a rape charge be withdrawn or compounded?</dt>
-        <dd>No. Rape cases are typically non-compoundable and cannot be withdrawn by the victim; the state prosecutes the offence.</dd>
-      </dl>
+      <div class="faq-item">
+        <span class="faq-question">Is the victim's past conduct relevant in court?</span>
+        <p class="text-muted">No. Section 53A of the Indian Evidence Act makes the past sexual history of the victim irrelevant to the issue of consent during trial.</p>
+      </div>
     </section>
+
   </main>
 
-  
-
-  <!-- CONTACT / FOOTER -->
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <strong>LawSections</strong> — Educational resource • Last updated: <span id="lastUpdated">2025-11-16</span>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="d-flex align-items-center gap-2 mb-2">
+             <div style="background:var(--brand-dark); color:white; width:24px; height:24px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px;">L</div>
+             <span class="fw-bold" style="color:var(--brand-dark);">LawSections</span>
+          </div>
+          <p class="small mb-0">— Educational resource • Last updated: <strong>2025-11-16</strong></p>
           <div class="mt-2 muted-small">If you want more sections added or corrections, contact the site admin.</div>
         </div>
-        <div class="col-md-4 text-md-end">
-          <div class="muted-small">© <span id="yr"></span> • Not legal advice</div>
+        <div class="col-md-6 text-md-end">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Privacy</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Terms</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item">Not Legal Advice</li>
+          </ul>
         </div>
       </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

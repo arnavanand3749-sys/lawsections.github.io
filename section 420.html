@@ -3,217 +3,348 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Law Sections — Search & Plain-English Explanations (India)</title>
+  <title>Section 420 IPC — Cheating & Inducing Delivery of Property | LawSections</title>
 
-  <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
-  <meta name="description" content="Search Indian law sections (IPC, CrPC) with plain-English summaries, examples and sources. Educational only — not legal advice.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="compliant.png">
 
   <style>
-    :root{
-      --brand:#05264a; --accent:#c59a3b; --card:#f8fafc; --muted:#6b7280; --accent2:#0b5cff;
+    :root {
+      --brand-dark: #0f172a;       
+      --brand-primary: #1e3a8a;    
+      --accent-gold: #b45309;      
+      --bg-body: #f3f4f6;          
+      --bg-card: #ffffff;
+      --text-main: #374151;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
     }
-    body{ 
-        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; 
-        color:#111827; 
-        background:#ffffff; 
-        }
-    h1,h2,h3{ 
-        font-family: 'Merriweather', serif; 
-        color:var(--brand); 
-            }
-    .summary{ 
-        font-size:0.98rem; 
-        color:#1f2937; 
-            }
-    .statutory{ 
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace; background:#f8f9fa; 
-        padding:10px; 
-        border-radius:6px; 
-        white-space:pre-wrap; 
-              }
-    .tag{ 
-        font-size:0.82rem; 
-        }
-    .sticky-search{ 
-        position: sticky; 
-        top:1rem; 
-        z-index: 102; 
-                  }
-    .muted-small{ 
-        font-size:0.85rem; 
-        color:#6b7280; 
-                }
-    .navbar-backdrop{ 
-        backdrop-filter: blur(6px); 
-        background: rgba(255,255,255,0.90); 
-        border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1030; 
-                    }
-    .accent{ 
-        color: var(--accent); 
-           }
-    .btn-accent{ 
-        background: var(--accent); 
-        color: #fff; 
-        border: none; 
-               }
-    .accordion-button:focus{ 
-        box-shadow: 0 0 0 .2rem rgba(197,154,59,0.25); 
-        }
-    footer{ 
-        background:#f8f9fa; 
-        padding:1.75rem 0; 
-        margin-top:2.5rem; 
-          }
-    @media (max-width:767px){
-      .sticky-search{ position: static; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      line-height: 1.7;
     }
-    .card{
-        background:var(--card);
-        padding:18px;
-        border-radius:12px;
-        box-shadow:0 6px 18px rgba(2,6,23,0.06);margin-bottom:18px;
-        margin-right: 2px;
-        margin-left: 2px;
-        border: 3px solid #05264a;
-         }
-    table{
-        width:100%;
-        border-collapse:collapse;
-        margin:12px 0
-         }
-    th,td{
-        padding:10px;
-        border-bottom:1px solid #e6eef8;
-        text-align:left
-         }
-    th{
-        background:#f1f8ff
-      }
-      .faq dt{
-        font-weight:600;
-        margin-top:12px
-             }
+
+    h1, h2, h3, h4 {
+      font-family: "Merriweather", serif;
+      color: var(--brand-dark);
+      margin-top: 1.5rem;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+      padding: 0.8rem 0;
+    }
+    .logo-box {
+      width: 42px; height: 42px;
+      background: var(--brand-dark);
+      color: #fff;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Merriweather", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      color: var(--text-main) !important;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--brand-primary) !important; }
+    
+    .btn-suggest {
+      background-color: var(--brand-dark);
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-suggest:hover {
+      background-color: var(--accent-gold);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* --- PAGE CONTENT --- */
+    .content-container {
+      max-width: 850px; /* Reading width */
+      margin: 2rem auto;
+      padding-bottom: 3rem;
+    }
+
+    /* Breadcrumb styling */
+    .back-link {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--brand-primary); }
+
+    /* Cards */
+    .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      animation: fadeIn 0.5s ease;
+    }
+    
+    /* Highlight box for key text */
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--brand-primary);
+      padding: 1.25rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      color: #1e3a8a;
+    }
+
+    /* Tables */
+    .table-custom {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 1rem 0;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .table-custom th {
+      background: #f8fafc;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+    .table-custom td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+    }
+    .table-custom tr:last-child td { border-bottom: none; }
+
+    /* Lists */
+    ol li, ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ Details */
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      font-weight: 700;
+      color: var(--brand-dark);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--border-subtle);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="navbar-backdrop navbar navbar-expand-lg">
+
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div style="width:40px;height:40px;background:var(--brand);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-right:10px">L</div>
-        <div>
-          <div style="font-weight:600;color:var(--brand)" class="container-header">LawSections</div>
-          <small class="text-muted">Plain-English explanations • India</small>
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 12px; text-decoration: none;">
+        <div class="logo-box">L</div>
+        <div style="line-height:1.2;">
+          <div style="font-weight:800; color:var(--brand-dark); font-size:1.1rem; letter-spacing:-0.5px;">LawSections</div>
+          <small style="color:var(--text-muted); font-size:0.75rem; font-weight:500;">Simplified Indian Law</small>
         </div>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Sections</a></li>
+        <ul class="navbar-nav ms-auto align-items-center" style="gap: 1rem;">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-accent btn-sm" href="Suggestion.html">Suggest a Section</a></li>
+          <li class="nav-item">
+            <a class="btn-suggest" href="Suggestion.html">Suggest Section <i class="bi bi-plus-lg"></i></a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <article style="padding: 20px;">
-      <h2>What does Section 420 IPC say?</h2>
-      <p>Section 420 IPC deals with the offence of <strong>cheating and dishonestly inducing delivery of property</strong>. In simple words, it punishes a person who cheats someone and, by doing so, causes the other person to deliver property or to make, alter or destroy a valuable security.</p>
 
-      <h3>Plain-English definition</h3>
-      <p>An act falls under Section 420 when:</p>
-      <ul>
-        <li>There is a <strong>dishonest or fraudulent intention</strong> (mens rea) to cheat, and</li>
-        <li>The accused uses a <strong>deceptive act, representation, or inducement</strong>, and</li>
-        <li>Because of that deception, the victim <strong>delivers property</strong> or <strong>creates/destroys/changes</strong> a valuable security — suffering loss or risk of loss.</li>
-      </ul>
+  <main class="container content-container">
+    
+    <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to All Sections</a>
 
-      <h3>Punishment under Section 420</h3>
-      <p>Section 420 prescribes:</p>
-      <ul>
-        <li><strong>Imprisonment</strong> which may extend to <strongseven years</strong> (note: format numbers: 'seven'→ should be numeric? Keep numeric for clarity) — corrected: imprisonment which may extend to <strong>seven years</strong>, and</li>
-        <li><strong>Fine</strong>.</li>
-      </ul>
-      <p>The actual sentence depends on case facts, conviction, and judicial discretion.</p>
-    </article>
+    <article class="content-card">
+      <span class="badge bg-danger mb-2">Offences Against Property (Fraud)</span>
+      <h1 class="mb-3" style="font-size:2.5rem; font-weight:700;">Section 420 IPC</h1>
+      <p class="lead text-muted">Cheating and Dishonestly Inducing Delivery of Property</p>
+      
+      <hr class="my-4 opacity-25">
 
-    <section class="card">
-      <h2>Key elements of Section 420</h2>
+      <h3 class="h4">What does Section 420 cover?</h3>
+      <p>Section 420 is the most commonly charged section for severe cheating offences. It deals with situations where a person commits **cheating** (defined in Section 415) and, as a direct result of that deception, causes the victim to suffer a significant loss.</p>
+      
+      <div class="highlight-box">
+        The offense is committed when a person, having cheated another, dishonestly induces the person to **deliver any property** or to **make, alter, or destroy the whole or any part of a valuable security**.
+      </div>
+      
+      <h3 class="h4 mt-4">Essential Elements for Section 420</h3>
+      <p>The prosecution must prove two main components:</p>
       <ol>
-        <li><strong>Cheating:</strong> Dishonest inducement or deception as defined under Section 415 IPC.</li>
-        <li><strong>Delivery or inducement:</strong> The deception must cause the victim to deliver property or create/alter/destroy a valuable security.</li>
-        <li><strong>Dishonest intention:</strong> The act must be done dishonestly — mere mistake or false promise without dishonest intention may not attract Section 420.</li>
+        <li>**Cheating (Deception + Dishonesty):** The accused must have had a dishonest or fraudulent intention from the very beginning.</li>
+        <li>**Inducement and Loss:** The cheating must directly cause the victim to:
+          <ul>
+            <li>Deliver property (money, goods, assets, etc.), **OR**</li>
+            <li>Change/destroy a valuable security (e.g., a contract, title deed, or will).</li>
+          </ul>
+        </li>
       </ol>
 
-      <h3>Nature of the offence</h3>
-      <table>
-        <tr><th>Feature</th><th>Details</th></tr>
-        <tr><td>Nature</td><td>Cognizable, non-bailable (in many cases), non-compoundable in serious matters</td></tr>
-        <tr><td>Trial court</td><td>Sessions Court for higher-value matters; Magistrate for simpler cases</td></tr>
-        <tr><td>Relevant sections</td><td>Section 415 (Cheating), Section 420 (Cheating and dishonestly inducing delivery of property)</td></tr>
-      </table>
-    </section>
-
-    <section class="card">
-      <h2>Simple examples</h2>
-      <p><strong>Example A (Online fraud):</strong> A creates a fake online store, takes payment from buyers, and never delivers goods. Victims pay and suffer loss. → Section 420 applies.</p>
-      <p><strong>Example B (False promise):</strong> B falsely promises to transfer property to C and obtains money by dishonest means with no intention to transfer. → Section 420 may apply if dishonest intention is proved.</p>
-      <p><strong>Example C (Business dispute):</strong> A business partner misrepresents accounts and induces the other to hand over assets. → If dishonest inducement is proved, Section 420 may apply.</p>
-    </section>
-
-    <section class="card">
-      <h2>Landmark cases & legal notes</h2>
+      <h3 class="h4 mt-4">Punishment Prescribed</h3>
       <ul>
-        <li><strong>K. M. Nanavati v. State of Mumbai</strong> — discussed aspects of mens rea and inducement in serious offences (note: Nanavati relates to homicide; included for legal principle context).</li>
-        <li><strong>R. v. Jones</strong> — general principles on fraud (common law references used in comparative discussions).</li>
-        <li>Courts examine <strong>intention**, inducement, and loss** — prosecution must prove dishonest intention and causal link between deception and delivery of property.</li>
+        <li>**Imprisonment** which may extend to **seven years**, and</li>
+        <li>**Fine**.</li>
       </ul>
-      <p><em>Note:</em> For precise statutory language, consult the official IPC text (IndiaCode).</p>
+      <p class="text-muted small mt-2">Because of the severity of the potential sentence, this offence is viewed seriously by the courts.</p>
+    </article>
+
+    <section class="content-card">
+      <h2 class="h3 mb-3">Key Facts at a Glance</h2>
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nature of Offence</strong></td>
+            <td>Cognizable, Non-bailable, Non-compoundable (typically)</td>
+          </tr>
+          <tr>
+            <td><strong>Trial Court</strong></td>
+            <td>Court of Session or Magistrate of the First Class (depending on jurisdiction and value)</td>
+          </tr>
+          <tr>
+            <td><strong>Relevant Sections</strong></td>
+            <td>Section 415 (Definition of Cheating), Section 417 (Punishment for simple Cheating), Section 420 (Aggravated Cheating involving property/valuable security)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="h4 mt-4">Distinction: Cheating (417) vs. Cheating & Delivery (420)</h3>
+      <p>The difference lies in the consequence:</p>
+      <ul>
+        <li>**Section 417 (Simple Cheating):** Punishes cheating where the consequence is merely harm or likelihood of harm (non-monetary). Max punishment is 1 year.</li>
+        <li>**Section 420 (Aggravated Cheating):** Requires the cheating to result specifically in the **delivery of property or valuable security**. Max punishment is 7 years.</li>
+      </ul>
     </section>
 
-    <section class="card faq">
-      <h2>Frequently Asked Questions (FAQ)</h2>
-      <dl>
-        <dt>What is Section 420 IPC?</dt>
-        <dd>Section 420 punishes cheating and dishonestly inducing a person to deliver property or alter/destroy valuable security.</dd>
-
-        <dt>What is the punishment under Section 420?</dt>
-        <dd>Imprisonment which may extend to seven years, and a fine.</dd>
-
-        <dt>Is Section 420 a bailable offence?</dt>
-        <dd>Often treated as non-bailable in serious fraud cases; bail depends on facts, value involved, and court discretion.</dd>
-
-        <dt>How is Section 420 different from a civil breach of contract?</dt>
-        <dd>Section 420 requires <strong>dishonest intention</strong> to cheat. A civil breach without dishonesty typically leads to civil remedies, not criminal liability.</dd>
-      </dl>
+    <section class="content-card">
+      <h2 class="h3 mb-3"><i class="bi bi-lightbulb text-warning me-2"></i>Simple Examples</h2>
+      <div class="mb-3">
+        <strong>Example A (Job Fraud):</strong>
+        <p class="text-muted">A promises B a government job, falsely claiming influence. B pays A ₹2 lakhs. A never had the intention or ability to deliver the job and keeps the money. **Section 420 applies.**</p>
+      </div>
+      <div class="mb-3">
+        <strong>Example B (Real Estate/Financial Fraud):</strong>
+        <p class="text-muted">C induces D to invest in a scheme by showing fraudulent balance sheets. D hands over title deeds to his property as security for the investment. **Section 420 applies** (inducing delivery of valuable security).</p>
+      </div>
     </section>
+    
+    <section class="content-card">
+      <h2 class="h3 mb-3">Key Legal Consideration</h2>
+      <ul>
+        <li>**The Test of Intention:** A key defense in a Section 420 case is proving that the transaction was merely a business failure (a civil breach of contract) and not a criminal act. The prosecution must definitively prove the **dishonest intention existed at the time of the promise or inducement**.</li>
+        <li>**Non-Bailable Nature:** Due to the risk of financial fraud and absconding, courts frequently treat Section 420 as non-bailable, particularly in cases involving high amounts or multiple victims.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2 class="h3 mb-4">Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <span class="faq-question">What is the punishment under Section 420?</span>
+        <p class="text-muted">Imprisonment up to seven years, along with a fine.</p>
+      </div>
+
+      <div class="faq-item">
+        <span class="faq-question">Is Section 420 a bailable offence?</span>
+        <p class="text-muted">No. It is generally a **non-bailable** offence, especially when the property delivered is of significant value or when there is strong evidence of prior dishonest intention.</p>
+      </div>
+
+      <div class="faq-item">
+        <span class="faq-question">How is this different from a civil dispute?</span>
+        <p class="text-muted">A civil breach of contract is an inability to perform. Section 420 requires the **intent to cheat** to have been present at the time the property was taken. If the intent was honest initially, it remains a civil dispute.</p>
+      </div>
+    </section>
+
   </main>
 
-  
-
-  <!-- CONTACT / FOOTER -->
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <strong>LawSections</strong> — Educational resource • Last updated: <span id="lastUpdated">2025-11-16</span>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="d-flex align-items-center gap-2 mb-2">
+             <div style="background:var(--brand-dark); color:white; width:24px; height:24px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px;">L</div>
+             <span class="fw-bold" style="color:var(--brand-dark);">LawSections</span>
+          </div>
+           <p class="small mb-0">— Educational resource • Last updated: <strong>2025-11-16</strong></p>
           <div class="mt-2 muted-small">If you want more sections added or corrections, contact the site admin.</div>
         </div>
-        <div class="col-md-4 text-md-end">
-          <div class="muted-small">© <span id="yr"></span> • Not legal advice</div>
+        <div class="col-md-6 text-md-end">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Privacy</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Terms</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item">Not Legal Advice</li>
+          </ul>
         </div>
       </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,212 +3,331 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Law Sections — Search & Plain-English Explanations (India)</title>
+  <title>Section 304B IPC — Dowry Death | LawSections</title>
 
-  <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
-  <meta name="description" content="Search Indian law sections (IPC, CrPC) with plain-English summaries, examples and sources. Educational only — not legal advice.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="compliant.png">
 
   <style>
-    :root{
-      --brand:#05264a; --accent:#c59a3b;
+    :root {
+      --brand-dark: #0f172a;       
+      --brand-primary: #1e3a8a;    
+      --accent-gold: #b45309;      
+      --bg-body: #f3f4f6;          
+      --bg-card: #ffffff;
+      --text-main: #374151;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
     }
-    body{ 
-        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; 
-        color:#111827; 
-        background:#ffffff; 
-        }
-    h1,h2,h3{ 
-        font-family: 'Merriweather', serif; 
-        color:var(--brand); 
-            }
-    .summary{ 
-        font-size:0.98rem; 
-        color:#1f2937; 
-            }
-    .statutory{ 
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace; background:#f8f9fa; 
-        padding:10px; 
-        border-radius:6px; 
-        white-space:pre-wrap; 
-              }
-    .tag{ 
-        font-size:0.82rem; 
-        }
-    .sticky-search{ 
-        position: sticky; 
-        top:1rem; 
-        z-index: 102; 
-                  }
-    .muted-small{ 
-        font-size:0.85rem; 
-        color:#6b7280; 
-                }
-    .navbar-backdrop{ 
-        backdrop-filter: blur(6px); 
-        background: rgba(255,255,255,0.90); 
-        border-bottom: 1px solid rgba(0,0,0,0.05); 
-        position: sticky; 
-        top: 0; 
-        z-index: 1030; 
-                    }
-    .accent{ 
-        color: var(--accent); 
-           }
-    .btn-accent{ 
-        background: var(--accent); 
-        color: #fff; 
-        border: none; 
-               }
-    .accordion-button:focus{ 
-        box-shadow: 0 0 0 .2rem rgba(197,154,59,0.25); 
-                           }
-    footer{ 
-        background:#f8f9fa; 
-        padding:1.75rem 0; 
-        margin-top:2.5rem; 
-          }
-    .card{
-        background:var(--card);
-        padding:18px;
-        border-radius:12px;
-        box-shadow:0 6px 18px rgba(2,6,23,0.06);margin-bottom:18px;
-        margin-left: 2px;
-        margin-right: 2px;
-        border: 3px solid #05264a;
-         }
-    table{
-        width:100%;
-        border-collapse:collapse;
-        margin:12px 0
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      line-height: 1.7;
     }
-    th,td{
-        padding:10px;
-        border-bottom:1px solid #e6eef8;
-        text-align:left
+
+    h1, h2, h3, h4 {
+      font-family: "Merriweather", serif;
+      color: var(--brand-dark);
+      margin-top: 1.5rem;
     }
-    th{
-        background:#f1f8ff
+
+    /* --- NAVBAR --- */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+      padding: 0.8rem 0;
     }
-    @media (max-width:767px){
-      .sticky-search{ position: static; }
+    .logo-box {
+      width: 42px; height: 42px;
+      background: var(--brand-dark);
+      color: #fff;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Merriweather", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      color: var(--text-main) !important;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--brand-primary) !important; }
+    
+    .btn-suggest {
+      background-color: var(--brand-dark);
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-suggest:hover {
+      background-color: var(--accent-gold);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* --- PAGE CONTENT --- */
+    .content-container {
+      max-width: 850px; /* Reading width */
+      margin: 2rem auto;
+      padding-bottom: 3rem;
+    }
+
+    /* Breadcrumb styling */
+    .back-link {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--brand-primary); }
+
+    /* Cards */
+    .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--brand-primary);
+      padding: 1.25rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      color: #1e3a8a;
+    }
+    .table-custom {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 1rem 0;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .table-custom th {
+      background: #f8fafc;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+    .table-custom td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+    }
+    .table-custom tr:last-child td { border-bottom: none; }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      font-weight: 700;
+      color: var(--brand-dark);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--border-subtle);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="navbar-backdrop navbar navbar-expand-lg">
+
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div style="width:40px;height:40px;background:var(--brand);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-right:10px">L</div>
-        <div>
-          <div style="font-weight:600;color:var(--brand)" class="container-header">LawSections</div>
-          <small class="text-muted">Plain-English explanations • India</small>
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 12px; text-decoration: none;">
+        <div class="logo-box">L</div>
+        <div style="line-height:1.2;">
+          <div style="font-weight:800; color:var(--brand-dark); font-size:1.1rem; letter-spacing:-0.5px;">LawSections</div>
+          <small style="color:var(--text-muted); font-size:0.75rem; font-weight:500;">Simplified Indian Law</small>
         </div>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Sections</a></li>
+        <ul class="navbar-nav ms-auto align-items-center" style="gap: 1rem;">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-accent btn-sm" href="Suggestion.html">Suggest a Section</a></li>
+          <li class="nav-item">
+            <a class="btn-suggest" href="Suggestion.html">Suggest Section <i class="bi bi-plus-lg"></i></a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <article style="padding: 20px;">
-      <h2>What does Section 304B IPC say?</h2>
-      <p>Section 304B addresses the offence of <strong>dowry death</strong>. It applies where a woman dies under certain circumstances soon after marriage and it is shown that she was subjected to cruelty or harassment by her husband or his relatives in connection with any demand for dowry.</p>
 
-      <h3>Plain-English definition</h3>
-      <p>An offence falls under Section 304B when all these elements are present:</p>
+  <main class="container content-container">
+    
+    <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to All Sections</a>
+
+    <article class="content-card">
+      <span class="badge bg-danger mb-2">Offences Against Women</span>
+      <h1 class="mb-3" style="font-size:2.5rem; font-weight:700;">Section 304B IPC</h1>
+      <p class="lead text-muted">Dowry Death</p>
+      
+      <hr class="my-4 opacity-25">
+
+      <h3 class="h4">What does Section 304B say?</h3>
+      <div class="highlight-box">
+        "Where the death of a woman is caused by burns, bodily injury, or occurs otherwise than under normal circumstances within seven years of marriage, and it is shown that soon before her death she was subjected to cruelty or harassment for dowry, such death shall be called ‘dowry death’."
+      </div>
+      
+      <p>An offence falls under Section 304B when <strong>all four</strong> of these elements are present:</p>
       <ul>
-        <li><strong>Death of a woman;</strong></li>
-        <li><strong>Death occurred within seven years</strong> of marriage (the statutory time period for dowry-death presumption);</li>
-        <li>The death occurred under <strong>suspicious circumstances</strong> (for example, burns, bodily injury, or unnatural causes); and</li>
-        <li>There is evidence that <strong>soon before her death</strong> she was subjected to cruelty or harassment by her husband or his relatives <strong>in connection with a demand for dowry</strong>.</li>
+        <li><strong>Death of a woman</strong> occurs.</li>
+        <li>The death happened <strong>within seven years</strong> of marriage.</li>
+        <li>The death was <strong>unnatural</strong> (burns, injury, suspicious circumstances).</li>
+        <li>There is evidence she was subjected to cruelty/harassment by her husband or in-laws <strong>soon before death</strong> specifically regarding <strong>dowry demands</strong>.</li>
       </ul>
 
-      <h3>Punishment under Section 304B</h3>
-      <p>When Section 304B is made out, the punishment prescribed is:</p>
+      <h3 class="h4 mt-4">Punishment Prescribed</h3>
       <ul>
-        <li><strong>Rigorous imprisonment</strong> for a term of <strong>not less than seven years</strong>, and</li>
-        <li>That term <strong>may extend to imprisonment for life</strong>.</li>
+        <li><strong>Minimum:</strong> Rigorous imprisonment for not less than <strong>7 years</strong>.</li>
+        <li><strong>Maximum:</strong> May extend to <strong>imprisonment for life</strong>.</li>
       </ul>
-
-      <p>Dowry death is a very serious, non-bailable, cognizable and non-compoundable offence. Courts treat such cases with strict scrutiny.</p>
+      <p class="text-muted small mt-2">Note: This is a non-bailable, cognizable, and non-compoundable offence. Courts treat these cases with strict scrutiny.</p>
     </article>
 
-    <section class="card">
-      <h2>Key facts at a glance</h2>
-      <table>
-        <tr><th>Feature</th><th>Details</th></tr>
-        <tr><td>Nature of offence</td><td>Cognizable, non-bailable, non-compoundable</td></tr>
-        <tr><td>Presumption</td><td>If the prosecution shows the required facts, courts may draw a presumption that the death was caused by dowry-related cruelty.</td></tr>
-        <tr><td>Trial court</td><td>Sessions Court / Special Courts dealing with offences against women</td></tr>
+    <section class="content-card">
+      <h2 class="h3 mb-3">Key Facts at a Glance</h2>
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nature of Offence</strong></td>
+            <td>Cognizable, Non-bailable, Non-compoundable</td>
+          </tr>
+          <tr>
+            <td><strong>Legal Presumption</strong></td>
+            <td>If facts are proved, court <em>shall presume</em> the husband/relatives caused the death (Sec 113B Evidence Act).</td>
+          </tr>
+          <tr>
+            <td><strong>Trial Court</strong></td>
+            <td>Session Court / Special Courts for women</td>
+          </tr>
+        </tbody>
       </table>
 
-      <h3>How is Section 304B different from Section 302 (murder)?</h3>
-      <p>Section 302 punishes <em>murder</em> generally. Section 304B is a specific offence for dowry death with a statutory presumption and a mandatory minimum sentence (7 years). If facts show murder beyond doubt, both sections can be invoked depending on evidence.</p>
+      <h3 class="h4 mt-4">Difference: Section 304B vs Section 302</h3>
+      <p><strong>Section 302</strong> is for Murder generally. <strong>Section 304B</strong> is a specific law created to tackle dowry deaths. It has a unique "statutory presumption" (the burden of proof shifts to the accused if harassment is proved). If clear intent to kill is found, an accused can be charged under <em>both</em> sections.</p>
     </section>
 
-    <section class="card">
-      <h2>Simple examples</h2>
-      <p><strong>Example A (Dowry death):</strong> A woman dies from burns within two years of marriage. Before her death she was repeatedly harassed over dowry by her husband and in-laws. → Section 304B may be attracted.</p>
-      <p><strong>Example B (Not dowry death):</strong> A woman dies of a sudden natural illness with no evidence of harassment or dowry demand. → Section 304B will likely not apply; other sections may be considered if foul play is suspected.</p>
+    <section class="content-card">
+      <h2 class="h3 mb-3"><i class="bi bi-lightbulb text-warning me-2"></i>Simple Examples</h2>
+      <div class="mb-3">
+        <strong>Example A (Dowry Death):</strong>
+        <p class="text-muted">A woman dies from burns in her kitchen 2 years after marriage. Neighbors testify that her husband beat her daily demanding a motorcycle. Since it is within 7 years and involves dowry harassment soon before death, Section 304B applies.</p>
+      </div>
+      <div class="mb-3">
+        <strong>Example B (Not Dowry Death):</strong>
+        <p class="text-muted">A woman dies of a heart attack 10 years after marriage. There were no demands for money. This does not fall under Section 304B because the 7-year limit has passed and the death was natural.</p>
+      </div>
     </section>
-
-    <section class="card">
-      <h2>Legal notes</h2>
+    
+    <section class="content-card">
+      <h2 class="h3 mb-3">Important Legal Notes</h2>
       <ul>
-        <li>Court examines <strong>timing</strong> (within seven years), <strong>nature of death</strong>, and <strong>evidence of harassment/dowry demand</strong> 'soon before' death.</li>
-        <li>A presumption is available to the prosecution but it is rebuttable — the defence can present evidence to show otherwise.</li>
-        <li>Dowry death charges are often tried with related offences (cruelty under Section 498A IPC, murder under Section 302, etc.).</li>
+        <li><strong>"Soon Before Death":</strong> There is no fixed time limit for this. Courts decide based on facts. However, the harassment must not be stale; there must be a live link between the cruelty and the death.</li>
+        <li><strong>Burden of Proof:</strong> Once the prosecution proves the woman died unnaturally within 7 years and was harassed for dowry, the burden shifts to the husband to prove he is innocent.</li>
       </ul>
     </section>
 
-    <section class="card faq">
-      <h2>Frequently Asked Questions (FAQ)</h2>
-      <dl>
-        <dt>What is Section 304B IPC?</dt>
-        <dd>Section 304B is the IPC offence for dowry death — when a woman dies under suspicious circumstances within seven years of marriage and had been subjected to cruelty or harassment related to dowry.</dd>
+    <section class="content-card">
+      <h2 class="h3 mb-4">Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <span class="faq-question">What is the punishment for dowry death?</span>
+        <p class="text-muted">Minimum 7 years rigorous imprisonment, extending up to life imprisonment.</p>
+      </div>
 
-        <dt>What is the punishment for dowry death?</dt>
-        <dd>Rigorous imprisonment for not less than seven years, which may extend to life imprisonment.</dd>
+      <div class="faq-item">
+        <span class="faq-question">Is dowry death bailable?</span>
+        <p class="text-muted">No. It is a serious non-bailable offence. Bail is rarely granted by lower courts.</p>
+      </div>
 
-        <dt>Is dowry death bailable?</dt>
-        <dd>No. Dowry death is generally non-bailable and cognizable.</dd>
-
-        <dt>Can Section 304B and 302 be applied together?</dt>
-        <dd>Yes. Depending on the facts, the prosecution may charge under 304B and/or 302. 304B carries a statutory presumption which assists the prosecution when the required elements are proved.</dd>
-      </dl>
+      <div class="faq-item">
+        <span class="faq-question">Can Section 304B and 302 be applied together?</span>
+        <p class="text-muted">Yes. If the police find evidence that the husband actively killed the wife (e.g., set her on fire), they will charge him with both Murder (302) and Dowry Death (304B).</p>
+      </div>
     </section>
+
   </main>
 
-  
-
-  <!-- CONTACT / FOOTER -->
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <strong>LawSections</strong> — Educational resource • Last updated: <span id="lastUpdated">2025-11-16</span>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="d-flex align-items-center gap-2 mb-2">
+             <div style="background:var(--brand-dark); color:white; width:24px; height:24px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px;">L</div>
+             <span class="fw-bold" style="color:var(--brand-dark);">LawSections</span>
+          </div>
+          <p class="small mb-0">— Educational resource • Last updated: <strong>2025-11-16</strong></p>
           <div class="mt-2 muted-small">If you want more sections added or corrections, contact the site admin.</div>
         </div>
-        <div class="col-md-4 text-md-end">
-          <div class="muted-small">© <span id="yr"></span> • Not legal advice</div>
+        <div class="col-md-6 text-md-end">
+          <ul class="list-inline mb-0 small">
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Privacy</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted">Terms</a></li>
+            <li class="list-inline-item">•</li>
+            <li class="list-inline-item">Not Legal Advice</li>
+          </ul>
         </div>
       </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
