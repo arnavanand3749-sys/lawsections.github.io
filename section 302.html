@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Section 302 IPC — Punishment for Murder | LawSections</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* ... (All previous CSS remains the same) ... */
+    :root {
+      --bg-main: #020617;          
+      --bg-card: rgba(30, 41, 59, 0.4); 
+      --bg-card-hover: rgba(30, 41, 59, 0.6);
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --text-white: #ffffff;
+      --text-gray: #94a3b8;
+      --text-gold: #d4af37;        
+      --grad-gold: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+      --glow-gold: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-main);
+      background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 60%);
+      background-attachment: fixed;
+      color: var(--text-gray);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, .serif-font {
+      font-family: "Cinzel", serif;
+      color: var(--text-white);
+      margin-top: 1.5rem;
+    }
+
+    .navbar {
+      background: rgba(2, 6, 23, 0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 1rem 0;
+      z-index: 1000;
+    }
+    
+    .gold-text-gradient {
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shine 4s linear infinite;
+      font-weight: 700;
+    }
+
+    @keyframes shine { to { background-position: 200% center; } }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-glass {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-glass);
+      color: var(--text-white);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-glass:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: var(--text-gold);
+      color: var(--text-gold);
+      box-shadow: var(--glow-gold);
+    }
+
+    .content-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding-bottom: 3rem;
+    }
+
+    .back-link {
+      text-decoration: none;
+      color: var(--text-gold);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2rem;
+      transition: 0.3s;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-glass);
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+    .back-link:hover { 
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateX(-5px); 
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      opacity: 0; 
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    .glass-card:nth-of-type(1) { animation-delay: 0.1s; }
+    .glass-card:nth-of-type(2) { animation-delay: 0.2s; }
+    .glass-card:nth-of-type(3) { animation-delay: 0.3s; }
+    .glass-card:nth-of-type(4) { animation-delay: 0.4s; }
+
+    .section-badge {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 4px;
+      background: rgba(220, 38, 38, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(220, 38, 38, 0.3);
+      font-weight: 600;
+    }
+
+    hr { border-color: var(--border-glass); opacity: 0.3; }
+
+    .statutory-box {
+      background: rgba(2, 6, 23, 0.6);
+      border: 1px dashed var(--border-glass);
+      border-left: 3px solid var(--text-gold);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      color: #e2e8f0;
+      position: relative;
+    }
+    .statutory-box::before {
+      content: '“';
+      font-size: 4rem;
+      color: var(--text-gold);
+      position: absolute;
+      top: -10px; left: 10px;
+      opacity: 0.3;
+      font-family: serif;
+      line-height: 0;
+    }
+
+    /* --- NEW SOURCE LINK STYLE --- */
+    .source-link {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-style: normal;
+        font-size: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+        color: var(--text-gold);
+        background: rgba(212, 175, 55, 0.1);
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+        border: 1px solid transparent;
+        transition: 0.2s;
+        float: right; /* Floats to the right of the statutory text */
+    }
+    .source-link:hover {
+        background: rgba(212, 175, 55, 0.2);
+        border-color: var(--text-gold);
+        transform: translateY(-2px);
+    }
+    .clearfix::after {
+        content: ""; clear: both; display: table;
+    }
+
+    .table-custom {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .table-custom th {
+      background: rgba(255,255,255,0.05);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 16px;
+      border-bottom: 1px solid var(--border-glass);
+      color: var(--text-gold);
+      font-weight: 600;
+    }
+    .table-custom td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-glass);
+      font-size: 0.95rem;
+      color: var(--text-white);
+    }
+    .table-custom tr:last-child td { border-bottom: none; }
+
+    ul li { margin-bottom: 0.8rem; }
+    strong { color: var(--text-white); }
+    
+    .link-gold {
+      color: var(--text-gold);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: 0.3s;
+    }
+    .link-gold:hover {
+      border-bottom-color: var(--text-gold);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-question {
+      font-weight: 600;
+      color: var(--text-gold);
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-glass);
+      margin-top: 5rem; padding: 3rem 0;
+      background: rgba(2, 6, 23, 0.8);
+      text-align: center;
+    }
+    /* --- Homepage theme override --- */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap');
+    :root{
+      --bg-deep:#06090f;
+      --bg-surface:rgba(16,24,40,0.65);
+      --bg-surface-hover:rgba(22,33,55,0.85);
+      --border-dim:rgba(255,255,255,0.06);
+      --border-glow:rgba(110,231,183,0.4);
+      --text-primary:#f1f5f9;
+      --text-secondary:#7c8ba1;
+      --text-muted:#4b5c75;
+      --accent:#34d399;
+      --accent-dim:rgba(52,211,153,0.12);
+      --accent-glow:0 0 25px rgba(52,211,153,0.15);
+      --info:#60a5fa;
+      --serif:'Playfair Display',Georgia,serif;
+      --sans:'Inter',system-ui,sans-serif;
+      --radius:14px;
+      --transition:0.35s cubic-bezier(.4,0,.2,1);
+      --bg-main:var(--bg-deep);
+      --bg-card:var(--bg-surface);
+      --bg-card-hover:var(--bg-surface-hover);
+      --border-glass:var(--border-dim);
+      --text-white:var(--text-primary);
+      --text-gray:var(--text-secondary);
+      --text-gold:var(--accent);
+      --grad-gold:linear-gradient(135deg,#34d399,#60a5fa);
+      --glow-gold:var(--accent-glow);
+      --brand-dark:var(--text-primary);
+      --brand-primary:var(--accent);
+      --accent-gold:var(--accent);
+      --bg-body:var(--bg-deep);
+      --text-main:var(--text-secondary);
+      --border-subtle:var(--border-dim);
+    }
+    body{
+      font-family:var(--sans);
+      background:var(--bg-deep);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%,rgba(52,211,153,0.07),transparent),
+        radial-gradient(ellipse 60% 40% at 80% 60%,rgba(96,165,250,0.04),transparent);
+      background-attachment:fixed;
+      color:var(--text-secondary);
+    }
+    h1,h2,h3,h4,.serif-font{font-family:var(--serif);color:var(--text-primary)}
+    strong{color:var(--text-primary)}
+    .navbar{
+      background:rgba(6,9,15,0.75);
+      backdrop-filter:blur(24px);
+      -webkit-backdrop-filter:blur(24px);
+      border-bottom:1px solid var(--border-dim);
+      box-shadow:none;
+    }
+    .navbar .container{max-width:900px}
+    .navbar-brand,.nav-link{color:var(--text-secondary)!important}
+    .navbar-brand:hover,.nav-link:hover{color:var(--accent)!important}
+    .navbar-toggler-icon{filter:invert(1) grayscale(1)}
+    .gold-text-gradient{
+      background:linear-gradient(135deg,#34d399,#60a5fa);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .content-container{max-width:900px;margin:3rem auto;padding-bottom:3rem}
+    .back-link,.link-gold{color:var(--accent)}
+    .back-link{
+      background:var(--accent-dim);
+      border:1px solid transparent;
+      padding:8px 16px;
+      border-radius:50px;
+    }
+    .back-link:hover,.link-gold:hover{color:var(--accent);border-color:var(--accent);text-shadow:0 0 10px rgba(52,211,153,0.35)}
+    .btn-glass,.btn-suggest{
+      background:var(--accent);
+      border:1px solid var(--accent);
+      color:#06090f!important;
+      border-radius:50px;
+      font-weight:700;
+      box-shadow:none;
+    }
+    .btn-glass:hover,.btn-suggest:hover{background:#2dd4a0;border-color:#2dd4a0;box-shadow:0 0 30px rgba(52,211,153,0.3);transform:translateY(-1px)}
+    .glass-card,.content-card{
+      background:var(--bg-surface);
+      border:1px solid var(--border-dim);
+      border-radius:var(--radius);
+      box-shadow:0 12px 40px -12px rgba(0,0,0,0.5);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+    .glass-card:hover,.content-card:hover{border-color:rgba(255,255,255,0.12);background:var(--bg-surface-hover)}
+    .section-badge,.badge{
+      background:var(--accent-dim)!important;
+      color:var(--accent)!important;
+      border:1px solid rgba(52,211,153,0.3);
+    }
+    .statutory-box,.highlight-box{
+      background:rgba(255,255,255,0.025);
+      border:1px dashed var(--border-dim);
+      border-left:3px solid var(--accent);
+      color:#cbd5e1;
+      font-family:var(--serif);
+    }
+    .statutory-box::before{color:var(--accent)}
+    .source-link{color:var(--accent);background:var(--accent-dim)}
+    .source-link:hover{border-color:var(--accent);background:rgba(52,211,153,0.18)}
+    .table-custom{border-color:var(--border-dim)}
+    .table-custom th{background:rgba(255,255,255,0.04);color:var(--accent);border-bottom-color:var(--border-dim)}
+    .table-custom td{color:var(--text-primary);border-bottom-color:var(--border-dim)}
+    .faq-question{color:var(--accent)}
+    .text-muted,.muted-small,.small.text-muted{color:var(--text-secondary)!important}
+    footer{background:rgba(6,9,15,0.85);border-top:1px solid var(--border-dim);color:var(--text-muted)}
+    footer a{color:var(--text-secondary)!important}
+    @media(max-width:600px){.glass-card,.content-card{padding:1.5rem}.content-container{margin:1.5rem auto}}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <i class="bi bi-bank2 gold-text-gradient fs-4"></i>
+        <span class="fs-4 fw-bold text-white" style="font-family: 'Cinzel', serif;">Law<span class="gold-text-gradient">Sections</span></span>
+      </a>
+      <div class="d-flex gap-3">
+        <a href="Suggestion.html" class="btn-glass">Suggest Edit <i class="bi bi-pencil ms-1"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container content-container">
+    
+    <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to Database</a>
+
+    <article class="glass-card">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+           <span class="section-badge mb-3 d-inline-block">Criminal Law</span>
+           <h1 class="mb-2" style="font-size:3rem; font-weight:700;">Section <span class="gold-text-gradient">302</span></h1>
+           <p class="lead" style="color:var(--text-gray);">Punishment for murder</p>
+        </div>
+        <i class="bi bi-bookmark text-white opacity-25 fs-3"></i>
+      </div>
+      
+      <hr class="my-4">
+
+      <div class="d-flex justify-content-between align-items-end mb-2">
+        <h3 class="h4 m-0">What does Section 302 say?</h3>
+      </div>
+      
+      <div class="statutory-box clearfix">
+        "Whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine."
+        <br>
+        <a href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" class="source-link">
+           Official Source <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+      </div>
+
+      <p>In simple terms: if a person intentionally kills another person, they face either the <strong class="text-white">death penalty</strong> or <strong class="text-white">life imprisonment</strong>, plus a possible fine.</p>
+
+      <h3 class="h4 mt-5">What counts as "murder"?</h3>
+      <p>Murder is technically defined in <a href="#" class="link-gold">Section 300 IPC</a>. A killing is considered murder when:</p>
+      <ul>
+        <li>There is a clear <strong style="color:var(--text-gold);">intention to cause death</strong>.</li>
+        <li>There is an intention to cause <strong>serious bodily harm</strong> that is sufficient to cause death in the ordinary course of nature.</li>
+        <li>The act is done with <strong>knowledge</strong> that it is so imminently dangerous that it will typically result in death (e.g., firing a loaded cannon into a crowd).</li>
+      </ul>
+
+      <h3 class="h4 mt-5">Punishments available</h3>
+      <div class="row g-3 mt-1">
+          <div class="col-md-4">
+              <div style="background:rgba(220, 38, 38, 0.1); border:1px solid rgba(220, 38, 38, 0.3); padding:1rem; border-radius:8px; text-align:center;">
+                  <div class="text-uppercase small fw-bold" style="color:#fca5a5;">Maximum</div>
+                  <div class="fs-5 text-white mt-1">Death Penalty</div>
+                  <div class="small opacity-75 mt-1">"Rarest of Rare"</div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div style="background:rgba(255, 255, 255, 0.05); border:1px solid var(--border-glass); padding:1rem; border-radius:8px; text-align:center;">
+                  <div class="text-uppercase small fw-bold" style="color:var(--text-gold);">Common</div>
+                  <div class="fs-5 text-white mt-1">Life Imprisonment</div>
+                  <div class="small opacity-75 mt-1">Natural Life</div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div style="background:rgba(255, 255, 255, 0.05); border:1px solid var(--border-glass); padding:1rem; border-radius:8px; text-align:center;">
+                  <div class="text-uppercase small fw-bold" style="color:var(--text-gray);">Additional</div>
+                  <div class="fs-5 text-white mt-1">Fine</div>
+                  <div class="small opacity-75 mt-1">Monetary Penalty</div>
+              </div>
+          </div>
+      </div>
+    </article>
+
+    <section class="glass-card">
+      <h2 class="h3 mb-4">Key Facts at a Glance</h2>
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nature of Offence</strong></td>
+            <td>Cognizable, Non-bailable, Non-compoundable</td>
+          </tr>
+          <tr>
+            <td><strong>Trial Court</strong></td>
+            <td>Court of Session</td>
+          </tr>
+          <tr>
+            <td><strong>Relevant Sections</strong></td>
+            <td>Section 300 (Definition), Section 302 (Punishment)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="h4 mt-5">Difference: Section 302 vs 304</h3>
+      <p class="mb-4"><strong>Section 302</strong> covers murder (premeditated or with clear intent). <strong>Section 304</strong> covers "Culpable Homicide not amounting to murder".</p>
+      
+      
+
+      <div class="p-4 mt-4" style="background:rgba(255,255,255,0.03); border-radius:12px; border:1px solid var(--border-glass);">
+        <h5 class="text-gold mb-3" style="color:var(--text-gold);">Simple Example</h5>
+        <div class="mb-3">
+            <strong><i class="bi bi-x-circle text-danger me-2"></i>Murder (Sec 302):</strong>
+            <span class="text-gray">A buys a knife, waits for B, and stabs B with intent to kill.</span>
+        </div>
+        <div>
+            <strong><i class="bi bi-exclamation-circle text-warning me-2"></i>Culpable Homicide (Sec 304):</strong>
+            <span class="text-gray">A and B fight at a bar. A pushes B; B falls, hits his head, and dies. (No premeditation).</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="h3 mb-4">Landmark Supreme Court Cases</h2>
+      <ul class="list-unstyled">
+        <li class="mb-4">
+          <a href="#" class="fs-5 link-gold serif-font">Bachan Singh v. State of Punjab (1980)</a>
+          <div class="small mt-1" style="color:var(--text-gray);">Established the <strong class="text-white">"rarest of rare"</strong> doctrine for awarding the death penalty.</div>
+        </li>
+        <li class="mb-4">
+          <a href="#" class="fs-5 link-gold serif-font">Machhi Singh v. State of Punjab (1983)</a>
+          <div class="small mt-1" style="color:var(--text-gray);">Clarified the specific factors judges must look at before awarding capital punishment.</div>
+        </li>
+        <li>
+          <a href="#" class="fs-5 link-gold serif-font">K.M. Nanavati v. State of Maharashtra (1962)</a>
+          <div class="small mt-1" style="color:var(--text-gray);">A famous case discussing "Grave and Sudden Provocation" (Murder vs Culpable Homicide).</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="h3 mb-4">Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <span class="faq-question">What is the punishment under Section 302 IPC?</span>
+        <p style="color:var(--text-gray);">Death or imprisonment for life, and the offender is also liable to pay a fine.</p>
+      </div>
+
+      <div class="faq-item">
+        <span class="faq-question">Is Section 302 a bailable offence?</span>
+        <p style="color:var(--text-gray);">No. It is <strong class="text-white">non-bailable</strong>. Getting bail is extremely difficult and usually only considered by higher courts under special circumstances.</p>
+      </div>
+
+      <div class="faq-item">
+        <span class="faq-question">When is the death penalty awarded?</span>
+        <p style="color:var(--text-gray);">Only in the "rarest of rare" cases—where the crime is exceptionally heinous, brutal, or shocks the collective conscience of society.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="mb-3">
+        <i class="bi bi-bank2 fs-3" style="color:var(--text-gold);"></i>
+      </div>
+      <p class="small text-muted mb-0">© 2025 LawSections India. All rights reserved.</p>
+      <p class="small text-muted" style="opacity:0.5;">Not Legal Advice.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

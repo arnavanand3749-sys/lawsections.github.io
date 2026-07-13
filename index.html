@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>LawSections | Indian Penal Code Simplified</title>
+  <meta name="description" content="A modern, simplified reference to Indian Penal Code sections with plain English explanations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg-deep:#06090f;
+      --bg-surface:rgba(16,24,40,0.65);
+      --bg-surface-hover:rgba(22,33,55,0.85);
+      --border-dim:rgba(255,255,255,0.06);
+      --border-glow:rgba(110,231,183,0.4);
+      --text-primary:#f1f5f9;
+      --text-secondary:#7c8ba1;
+      --text-muted:#4b5c75;
+      --accent:#34d399;
+      --accent-dim:rgba(52,211,153,0.12);
+      --accent-glow:0 0 25px rgba(52,211,153,0.15);
+      --danger:#f87171;
+      --info:#60a5fa;
+      --serif:'Playfair Display',Georgia,serif;
+      --sans:'Inter',system-ui,sans-serif;
+      --radius:14px;
+      --transition:0.35s cubic-bezier(.4,0,.2,1);
+    }
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--sans);background:var(--bg-deep);color:var(--text-secondary);
+      min-height:100vh;overflow-x:hidden;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%,rgba(52,211,153,0.07),transparent),
+        radial-gradient(ellipse 60% 40% at 80% 60%,rgba(96,165,250,0.04),transparent);
+      background-attachment:fixed;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ── Animated BG particles ── */
+    #particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5}
+
+    /* ── Container ── */
+    .container{max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+    /* ── Navbar ── */
+    .nav-bar{
+      position:sticky;top:0;z-index:100;
+      background:rgba(6,9,15,0.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+      border-bottom:1px solid var(--border-dim);padding:16px 0;
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:860px;margin:0 auto;padding:0 24px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-primary)}
+    .brand i{font-size:1.4rem}
+    .brand span.acc{color:var(--accent)}
+    .nav-actions{display:flex;gap:10px}
+    .btn-pill{
+      padding:8px 22px;border-radius:50px;font-size:0.82rem;font-weight:600;
+      border:1px solid var(--border-dim);background:transparent;color:var(--text-secondary);
+      cursor:pointer;transition:var(--transition);font-family:var(--sans);
+    }
+    .btn-pill:hover{border-color:var(--accent);color:var(--accent);box-shadow:var(--accent-glow)}
+    .btn-pill.primary{background:var(--accent);color:#06090f;border-color:var(--accent)}
+    .btn-pill.primary:hover{background:#2dd4a0;box-shadow:0 0 30px rgba(52,211,153,0.3)}
+
+    /* ── Hero ── */
+    .hero{text-align:center;padding:80px 0 40px;position:relative}
+    .hero h1{
+      font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:800;
+      color:var(--text-primary);line-height:1.2;margin-bottom:16px;
+    }
+    .hero h1 .accent-word{
+      background:linear-gradient(135deg,#34d399,#60a5fa);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-size:200% auto;animation:gradShift 4s ease infinite;
+    }
+    @keyframes gradShift{0%,100%{background-position:0% center}50%{background-position:200% center}}
+    .hero p{max-width:520px;margin:0 auto;font-size:1.05rem;line-height:1.7;color:var(--text-secondary)}
+    .hero-glow{
+      position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);
+      width:500px;height:300px;border-radius:50%;
+      background:radial-gradient(circle,rgba(52,211,153,0.08),transparent 70%);
+      filter:blur(60px);z-index:-1;pointer-events:none;
+    }
+    /* Stats row */
+    .stats-row{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+    .stat{text-align:center}
+    .stat-num{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text-primary)}
+    .stat-label{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+
+    /* ── Search ── */
+    .search-wrap{display:flex;justify-content:center;margin:32px 0 28px}
+    .search-box{
+      width:100%;max-width:540px;display:flex;align-items:center;gap:12px;
+      background:var(--bg-surface);border:1px solid var(--border-dim);
+      border-radius:50px;padding:12px 20px;transition:var(--transition);
+      backdrop-filter:blur(12px);
+    }
+    .search-box:focus-within,.search-box:hover{border-color:var(--accent);box-shadow:var(--accent-glow)}
+    .search-box i{color:var(--text-muted);font-size:1rem;flex-shrink:0}
+    .search-box input{
+      flex:1;background:transparent;border:none;outline:none;
+      color:var(--text-primary);font-size:0.92rem;font-family:var(--sans);
+    }
+    .search-box input::placeholder{color:var(--text-muted)}
+
+    /* ── Filter Pills ── */
+    .filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:36px}
+    .filter-btn{
+      padding:7px 18px;border-radius:50px;font-size:0.8rem;font-weight:500;
+      background:var(--bg-surface);border:1px solid var(--border-dim);color:var(--text-secondary);
+      cursor:pointer;transition:var(--transition);font-family:var(--sans);
+    }
+    .filter-btn:hover{background:var(--bg-surface-hover);color:var(--text-primary)}
+    .filter-btn.active{background:linear-gradient(135deg,#34d399,#2dd4a0);color:#06090f;font-weight:700;border-color:transparent;box-shadow:0 4px 16px rgba(52,211,153,0.25)}
+
+    /* ── Section Cards ── */
+    .card-list{display:flex;flex-direction:column;gap:16px;padding-bottom:40px}
+    .section-card{
+      background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--radius);
+      overflow:hidden;transition:var(--transition);backdrop-filter:blur(10px);
+    }
+    .section-card:hover{transform:translateY(-3px);background:var(--bg-surface-hover);border-color:rgba(255,255,255,0.12);box-shadow:0 12px 40px -12px rgba(0,0,0,0.5)}
+    .section-card.open{border-color:var(--accent);box-shadow:var(--accent-glow)}
+    .card-header{
+      display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;
+      transition:var(--transition);user-select:none;
+    }
+    .card-header:hover{background:rgba(255,255,255,0.02)}
+    .card-left{display:flex;align-items:center;gap:14px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--text-muted);flex-shrink:0;transition:var(--transition)}
+    .section-card.open .dot{background:var(--accent);box-shadow:0 0 10px var(--accent)}
+    .dot.red{background:#f87171;box-shadow:0 0 6px #f87171}
+    .dot.blue{background:#60a5fa}
+    .card-title{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--text-primary)}
+    .card-title .code-tag{font-size:0.65em;opacity:0.5;font-family:var(--sans);font-weight:400;margin-left:6px}
+    .card-subtitle{font-size:0.85rem;color:var(--text-secondary);margin-top:2px}
+    .card-subtitle.red-text{color:#fca5a5}
+    .card-subtitle.blue-text{color:#93c5fd}
+    .chevron{color:var(--text-muted);font-size:1rem;transition:transform 0.3s ease}
+    .section-card.open .chevron{transform:rotate(180deg);color:var(--accent)}
+
+    /* Card Body */
+    .card-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(.4,0,.2,1),opacity 0.3s ease;opacity:0}
+    .section-card.open .card-body{max-height:600px;opacity:1}
+    .card-body-inner{padding:0 24px 24px}
+    .explain-box{
+      background:rgba(255,255,255,0.025);border-left:3px solid var(--accent);
+      padding:18px 20px;border-radius:0 10px 10px 0;color:#cbd5e1;font-size:0.98rem;line-height:1.75;
+    }
+    .explain-box.red-border{border-left-color:#f87171}
+    .explain-box.blue-border{border-left-color:#60a5fa}
+    .explain-box strong{color:var(--text-primary);font-weight:600}
+    .explain-box strong.red-text{color:#fca5a5}
+    .explain-box strong.blue-text{color:#93c5fd}
+    .statute-box{
+      font-family:var(--serif);font-style:italic;color:var(--text-muted);
+      margin-top:16px;padding:14px 16px;border:1px dashed var(--border-dim);border-radius:8px;
+      font-size:0.92rem;line-height:1.6;position:relative;
+    }
+    .source-badge{
+      display:inline-flex;align-items:center;gap:5px;font-family:var(--sans);font-style:normal;
+      font-size:0.72rem;color:var(--accent);background:var(--accent-dim);padding:4px 10px;
+      border-radius:4px;margin-top:10px;float:right;transition:var(--transition);border:1px solid transparent;
+    }
+    .source-badge:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .source-badge.red{color:#f87171;background:rgba(248,113,113,0.1)}
+    .source-badge.red:hover{border-color:#f87171}
+    .source-badge.blue{color:#60a5fa;background:rgba(96,165,250,0.1)}
+    .source-badge.blue:hover{border-color:#60a5fa}
+    .card-actions{display:flex;justify-content:flex-end;margin-top:18px;clear:both}
+    .read-link{
+      display:flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:1px;color:var(--accent);transition:var(--transition);
+    }
+    .read-link:hover{gap:12px;text-shadow:0 0 10px rgba(52,211,153,0.4)}
+    .read-link.red{color:#fca5a5}
+    .read-link.blue{color:#93c5fd}
+
+    /* ── Footer ── */
+    footer{border-top:1px solid var(--border-dim);margin-top:60px;padding:36px 0;text-align:center;background:rgba(6,9,15,0.85)}
+    footer i{font-size:1.4rem;color:var(--accent);margin-bottom:8px;display:block}
+    footer p{font-size:0.78rem;color:var(--text-muted);margin:4px 0}
+
+    /* ── Scroll reveal ── */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ── Mobile ── */
+    @media(max-width:600px){
+      .hero{padding:50px 0 30px}
+      .hero h1{font-size:1.7rem}
+      .stats-row{gap:24px}
+      .card-header{padding:16px 18px}
+      .card-body-inner{padding:0 18px 18px}
+      .nav-actions .hide-mobile{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- Navbar -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a href="#" class="brand"><i class="bi bi-bank2"></i>Law<span class="acc">Sections</span></a>
+    <div class="nav-actions">
+      <button class="btn-pill hide-mobile" onclick="location.href='contact.html'">Contact</button>
+      <button class="btn-pill primary" onclick="location.href='Suggestion.html'">Suggest Edits</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Hero -->
+  <section class="hero reveal">
+    <div class="hero-glow"></div>
+    <h1>Indian Penal Code<br><span class="accent-word">Simplified.</span></h1>
+    <p>A modern legal reference designed for clarity. Tap any section below to reveal its plain English explanation.</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Sections</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free Access</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Categories</div></div>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <div class="search-wrap reveal">
+    <div class="search-box">
+      <i class="bi bi-search"></i>
+      <input type="text" id="searchbar" placeholder="Search by section number, keyword, or offence..." autocomplete="off">
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters reveal" id="filter-bar">
+    <button class="filter-btn" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="criminal">Criminal</button>
+    <button class="filter-btn" data-filter="murder">Murder</button>
+    <button class="filter-btn" data-filter="fraud">Fraud</button>
+    <button class="filter-btn" data-filter="family">Family</button>
+    <button class="filter-btn" data-filter="rape">Sexual Offences</button>
+    <button class="filter-btn" data-filter="attempt">Attempt</button>
+    <button class="filter-btn" data-filter="dowry">Dowry</button>
+  </div>
+
+  <!-- Cards -->
+  <div class="card-list" id="card-list">
+
+    <article class="section-card reveal" data-tags="criminal,murder">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-left"><span class="dot"></span><div><div class="card-title">Section 302<span class="code-tag">IPC</span></div><div class="card-subtitle">Punishment for murder</div></div></div>
+        <i class="bi bi-chevron-down chevron"></i>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="explain-box"><strong>Plain English:</strong><br>Intentional killing is murder. It is the most serious crime against the human body. The punishment is either life imprisonment or the death penalty.</div>
+        <div class="statute-box clearfix">"Whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine."<br><a href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" class="source-badge">Official Source <i class="bi bi-box-arrow-up-right"></i></a></div>
+        <div class="card-actions"><a href="section 302.html" class="read-link">Read Case Laws <i class="bi bi-arrow-right"></i></a></div>
+      </div></div>
+    </article>
+
+    <article class="section-card reveal" data-tags="criminal,attempt">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-left"><span class="dot"></span><div><div class="card-title">Section 307<span class="code-tag">IPC</span></div><div class="card-subtitle">Attempt to murder</div></div></div>
+        <i class="bi bi-chevron-down chevron"></i>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="explain-box"><strong>Plain English:</strong><br>Doing an act with the intention to kill, but failing to cause death. If hurt is caused, the penalty increases.</div>
+        <div class="statute-box clearfix">"Whoever does any act with such intention or knowledge... shall be punished with imprisonment... up to ten years..."<br><a href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" class="source-badge">Official Source <i class="bi bi-box-arrow-up-right"></i></a></div>
+        <div class="card-actions"><a href="section 307.html" class="read-link">Read Case Laws <i class="bi bi-arrow-right"></i></a></div>
+      </div></div>
+    </article>
+
+    <article class="section-card reveal" data-tags="criminal,rape,sexual offences">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-left"><span class="dot red"></span><div><div class="card-title">Section 376<span class="code-tag">IPC</span></div><div class="card-subtitle red-text">Punishment for rape</div></div></div>
+        <i class="bi bi-chevron-down chevron"></i>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="explain-box red-border"><strong class="red-text">Plain English:</strong><br>Sexual intercourse without consent. The law is very strict, prescribing minimum 10 years rigorous imprisonment up to life.</div>
+        <div class="statute-box clearfix">"Whoever... commits rape, shall be punished with rigorous imprisonment... for a term which shall not be less than ten years..."<br><a href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" class="source-badge red">Official Source <i class="bi bi-box-arrow-up-right"></i></a></div>
+        <div class="card-actions"><a href="section 376.html" class="read-link red">Read Case Laws <i class="bi bi-arrow-right"></i></a></div>
+      </div></div>
+    </article>
+
+    <article class="section-card reveal" data-tags="criminal,dowry">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-left"><span class="dot"></span><div><div class="card-title">Section 304B<span class="code-tag">IPC</span></div><div class="card-subtitle">Dowry Death</div></div></div>
+        <i class="bi bi-chevron-down chevron"></i>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="explain-box"><strong>Plain English:</strong><br>Where a woman dies unnaturally within 7 years of marriage, and it is shown she was harassed for dowry soon before death. Minimum punishment is 7 years imprisonment.</div>
+        <div class="statute-box clearfix">"Where the death of a woman is caused by burns or bodily injury or occurs otherwise than under normal circumstances within seven years of her marriage..."<br><a href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" class="source-badge">Official Source <i class="bi bi-box-arrow-up-right"></i></a></div>
+        <div class="card-actions"><a href="section 304b.html" class="read-link">Read Case Laws <i class="bi bi-arrow-right"></i></a></div>
+      </div></div>
+    </article>
+
+    <article class="section-card reveal" data-tags="criminal,fraud">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-left"><span class="dot"></span><div><div class="card-title">Section 420<span class="code-tag">IPC</span></div><div class="card-subtitle">Cheating &amp; Fraud</div></div></div>
+        <i class="bi bi-chevron-down chevron"></i>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="explain-box"><strong>Plain English:</strong><br>Deceiving someone to get them to hand over property. Commonly known as "420 fraud." Punishment up to 7 years.</div>
+        <div class="statute-box clearfix">"Whoever cheats and thereby dishonestly induces the person deceived to deliver any property..."<br><a href="https://www.indiacode.nic.in/repealedfileopen?rfilename=A1860-45.pdf" target="_blank" class="source-badge">Official Source <i class="bi bi-box-arrow-up-right"></i></a></div>
+        <div class="card-actions"><a href="section 420.html" class="read-link">Read Case Laws <i class="bi bi-arrow-right"></i></a></div>
+      </div></div>
+    </article>
+
+    <article class="section-card reveal" data-tags="civil,family">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-left"><span class="dot blue"></span><div><div class="card-title">Section 125<span class="code-tag">CrPC</span></div><div class="card-subtitle blue-text">Maintenance</div></div></div>
+        <i class="bi bi-chevron-down chevron"></i>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="explain-box blue-border"><strong class="blue-text">Plain English:</strong><br>A magistrate can order a person to pay monthly allowance for the maintenance of their wife, children, or parents if they are neglected.</div>
+        <div class="statute-box clearfix">"If any person... neglects or refuses to maintain... his wife... minor child... or parents..."<br><a href="https://www.indiacode.nic.in/handle/123456789/2256?view_type=browse" target="_blank" class="source-badge blue">Official Source <i class="bi bi-box-arrow-up-right"></i></a></div>
+        <div class="card-actions"><a href="CRPC 125.html" class="read-link blue">Read Case Laws <i class="bi bi-arrow-right"></i></a></div>
+      </div></div>
+    </article>
+
+  </div>
+</div>
+
+<footer>
+  <i class="bi bi-bank2"></i>
+  <p>&copy; 2025 LawSections India. All rights reserved.</p>
+  <p style="opacity:0.5">Not Legal Advice.</p>
+</footer>
+
+<script>
+// ── Card Toggle ──
+function toggleCard(header){
+  const card=header.closest('.section-card');
+  card.classList.toggle('open');
+}
+
+// ── Search ──
+document.getElementById('searchbar').addEventListener('input',function(){
+  const q=this.value.toLowerCase();
+  document.querySelectorAll('.section-card').forEach(c=>{
+    const tags=(c.dataset.tags||'').toLowerCase();
+    const text=c.textContent.toLowerCase();
+    c.style.display=(text.includes(q)||tags.includes(q))?'':'none';
+  });
+});
+
+// ── Filters ──
+const filterBtns=document.querySelectorAll('.filter-btn');
+let activeFilter='all';
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter=btn.dataset.filter;
+    document.querySelectorAll('.section-card').forEach(c=>{
+      if(activeFilter==='all'){c.style.display='';return}
+      c.style.display=(c.dataset.tags||'').includes(activeFilter)?'':'none';
+    });
+  });
+});
+// Activate "All" by default
+filterBtns[0].classList.add('active');
+
+// ── Scroll Reveal ──
+const revealEls=document.querySelectorAll('.reveal');
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target)}});
+},{threshold:0.1});
+revealEls.forEach(el=>revealObs.observe(el));
+
+// ── Floating Particles Canvas ──
+(function(){
+  const canvas=document.getElementById('particles-canvas');
+  const ctx=canvas.getContext('2d');
+  let w,h,particles=[];
+  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight}
+  window.addEventListener('resize',resize);resize();
+  for(let i=0;i<50;i++){
+    particles.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+0.5,dx:(Math.random()-0.5)*0.3,dy:(Math.random()-0.5)*0.3,o:Math.random()*0.4+0.1});
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p=>{
+      p.x+=p.dx;p.y+=p.dy;
+      if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(52,211,153,${p.o})`;ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
